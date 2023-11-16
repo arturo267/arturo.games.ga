@@ -10,7 +10,7 @@
   }
 
   body {
-    background: black;
+    background: white;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -34,20 +34,20 @@ const level1 = [
   [],
   ['R','O','R','R','R','R','R','R','R','R','R','G','R','R'],
   ['R','R','O','R','R','R','R','R','R','R','R','G','R','R'],
-  ['O','O','O','R','O','O','O','O','O','O','O','G','O','O'],
-  ['O','O','O','O','R','O','O','O','O','O','O','G','O','O'],
-  ['G','G','G','G','G','O','G','G','G','G','G','G','G','G'],
-  ['G','G','G','G','G','G','O','G','G','G','G','G','G','G'],
-  ['Y','Y','Y','Y','Y','Y','Y','R','Y','Y','Y','G','Y','Y'],
-  ['Y','Y','Y','Y','Y','Y','Y','Y','R','Y','Y','G','Y','Y']
+  ['O','O','O','O','O','O','O','O','O','O','O','O','O','O'],
+  ['O','O','O','O','O','O','O','O','O','O','O','O','O','O'],
+  ['G','G','G','G','G','G','G','G','G','G','G','G','G','G'],
+  ['G','G','G','G','G','G','G','G','G','G','G','G','G','G'],
+  ['Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y'],
+  ['Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y']
 ];
 
 // create a mapping between color short code (R, O, G, Y) and color name
 const colorMap = {
-  'R': 'pink',
-  'O': 'red',
-  'G': 'cyan',
-  'Y': 'blue'
+  'R': 'black',
+  'O': 'black',
+  'G': 'black',
+  'Y': 'red'
 };
 
 // use a 2px gap between each brick
@@ -91,11 +91,11 @@ const paddle = {
 const ball = {
   x: 130,
   y: 260,
-  width: 5,
-  height: 5,
+  width: 10,
+  height: 10,
 
   // how fast the ball should go in either the x or y direction
-  speed: 100,
+  speed: 5,
 
   // ball velocity
   dx: 0,
@@ -215,11 +215,11 @@ function loop() {
 document.addEventListener('keydown', function(e) {
   // left arrow key
   if (e.which === 37) {
-    paddle.dx = -100;
+    paddle.dx = -10;
   }
   // right arrow key
   else if (e.which === 39) {
-    paddle.dx = 100;
+    paddle.dx = 10;
   }
 
   // space key
