@@ -116,8 +116,13 @@ function loop() {
       snake.maxCells++;
 
       // canvas is 400x400 which is 25x25 grids 
-      apple.x = getRandomInt(0, 33.3333333333) * grid;
-      apple.y = getRandomInt(0, 33.3333333333) * grid;
+      randomX = getRandomInt(0, 33.3333333333) * grid;
+      randomY = getRandomInt(0, 33.3333333333) * grid;
+
+      if (cell.x !== randomX && cell.y !== randomY) {
+        apple.x = getRandomInt(0, 33.3333333333) * grid;
+        apple.y = getRandomInt(0, 33.3333333333) * grid;
+      }
 
     }
 
@@ -150,8 +155,13 @@ function loop() {
         snake.dx = grid;
         snake.dy = 0;
 
+        randomX = getRandomInt(0, 33.3333333333) * grid;
+        randomY = getRandomInt(0, 33.3333333333) * grid;
+
+      if (cell.x !== randomX && cell.y !== randomY) {
         apple.x = getRandomInt(0, 33.3333333333) * grid;
         apple.y = getRandomInt(0, 33.3333333333) * grid;
+      }
 
        // pear.x = getRandomInt(0, 33.3333333333) * grid;
        // pear.y = getRandomInt(0, 33.3333333333) * grid;
