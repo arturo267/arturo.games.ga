@@ -101,8 +101,8 @@ function loop() {
   context.fillStyle = 'red';
   context.fillRect(apple.x, apple.y, grid-1, grid-1);
 
-  context.fillStyle = 'green';
-  context.fillRect(pear.x, pear.y, grid-1, grid,1);
+ // context.fillStyle = 'green';
+//  context.fillRect(pear.x, pear.y, grid-1, grid,1);
 
   // draw snake one cell at a time
   context.fillStyle = 'yellow';
@@ -121,22 +121,22 @@ function loop() {
 
     }
 
-    if (cell.x === pear.x && cell.y === pear.y) {
-      snake.maxCells+2;
+   // if (cell.x === pear.x && cell.y === pear.y) {
+    //  snake.maxCells+2;
 
       // canvas is 400x400 which is 25x25 grids 
-      pear.x = getRandomInt(0, 33.3333333333) * grid;
-      pear.y = getRandomInt(0, 33.3333333333) * grid;
+  //    pear.x = getRandomInt(0, 33.3333333333) * grid;
+   //   pear.y = getRandomInt(0, 33.3333333333) * grid;
 
-    }
+  //  }
 
-    if (pear.x === apple.x && pear.y === apple.y) {
+  //  if (pear.x === apple.x && pear.y === apple.y) {
 
       // canvas is 400x400 which is 25x25 grids 
-      pear.x = getRandomInt(0, 33.3333333333) * grid;
-      pear.y = getRandomInt(0, 33.3333333333) * grid;
+    //  pear.x = getRandomInt(0, 33.3333333333) * grid;
+    //  pear.y = getRandomInt(0, 33.3333333333) * grid;
 
-    }
+   // }
 
     // check collision with all cells after this one (modified bubble sort)
     for (var i = index + 1; i < snake.cells.length; i++) {
@@ -153,8 +153,8 @@ function loop() {
         apple.x = getRandomInt(0, 33.3333333333) * grid;
         apple.y = getRandomInt(0, 33.3333333333) * grid;
 
-        pear.x = getRandomInt(0, 33.3333333333) * grid;
-        pear.y = getRandomInt(0, 33.3333333333) * grid;
+       // pear.x = getRandomInt(0, 33.3333333333) * grid;
+       // pear.y = getRandomInt(0, 33.3333333333) * grid;
       }
     }
   });
