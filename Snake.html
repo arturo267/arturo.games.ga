@@ -121,7 +121,8 @@ function loop() {
 
     }
 
-    if (pear.x === apple.x && pear.y === apple.y) {
+    if (cell.x === pear.x && cell.y === pear.y) {
+      snake.maxCells+2;
 
       // canvas is 400x400 which is 25x25 grids 
       pear.x = getRandomInt(0, 33.3333333333) * grid;
@@ -129,17 +130,7 @@ function loop() {
 
     }
 
-    if (apple.x === pear.x && cell.y === pear.y) {
-     
-
-      // canvas is 400x400 which is 25x25 grids 
-      apple.x = getRandomInt(0, 33.3333333333) * grid;
-      apple.y = getRandomInt(0, 33.3333333333) * grid;
-
-    }
-
-    if (cell.x === pear.x && cell.y === pear.y) {
-      snake.maxCells++;
+    if (pear.x === apple.x && pear.y === apple.y) {
 
       // canvas is 400x400 which is 25x25 grids 
       pear.x = getRandomInt(0, 33.3333333333) * grid;
