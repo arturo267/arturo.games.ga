@@ -40,7 +40,7 @@ var snake = {
   cells: [],
   
   // length of the snake. grows when eating an apple
-  maxCells: 20
+  maxCells: 4
 };
 var apple = {
   x: 320,
@@ -109,8 +109,8 @@ function loop() {
       snake.maxCells++;
 
       // canvas is 400x400 which is 25x25 grids 
-      apple.x = getRandomInt(0, 25) * grid;
-      apple.y = getRandomInt(0, 25) * grid;
+      apple.x = getRandomInt(0, 33.3333333333) * grid;
+      apple.y = getRandomInt(0, 33.3333333333) * grid;
     }
 
     // check collision with all cells after this one (modified bubble sort)
@@ -125,8 +125,8 @@ function loop() {
         snake.dx = grid;
         snake.dy = 0;
 
-        apple.x = getRandomInt(0, 25) * grid;
-        apple.y = getRandomInt(0, 25) * grid;
+        apple.x = getRandomInt(0, 33.3333333333) * grid;
+        apple.y = getRandomInt(0, 33.3333333333) * grid;
       }
     }
   });
