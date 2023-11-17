@@ -45,8 +45,12 @@ var snake = {
 var apple = {
   x: 320,
   y: 320
+  
 };
-
+var pear = {
+  x: 320,
+  y: 320,
+};
 // get random whole numbers in a specific range
 // @see https://stackoverflow.com/a/1527820/2124254
 function getRandomInt(min, max) {
@@ -97,6 +101,9 @@ function loop() {
   context.fillStyle = 'red';
   context.fillRect(apple.x, apple.y, grid-1, grid-1);
 
+  context.fillStyle = 'green';
+  context.fillRect(pear.x, pear.y, grid-1, grid,1);
+
   // draw snake one cell at a time
   context.fillStyle = 'yellow';
   snake.cells.forEach(function(cell, index) {
@@ -111,6 +118,16 @@ function loop() {
       // canvas is 400x400 which is 25x25 grids 
       apple.x = getRandomInt(0, 33.3333333333) * grid;
       apple.y = getRandomInt(0, 33.3333333333) * grid;
+
+    }
+
+    if (cell.x === pear.x && cell.y === pear.y) {
+      snake.maxCells++;
+
+      // canvas is 400x400 which is 25x25 grids 
+      pear.x = getRandomInt(0, 33.3333333333) * grid;
+      pear.y = getRandomInt(0, 33.3333333333) * grid;
+
     }
 
     // check collision with all cells after this one (modified bubble sort)
@@ -127,6 +144,9 @@ function loop() {
 
         apple.x = getRandomInt(0, 33.3333333333) * grid;
         apple.y = getRandomInt(0, 33.3333333333) * grid;
+
+        pear.x = getRandomInt(0, 33.3333333333) * grid;
+        pear.y = getRandomInt(0, 33.3333333333) * grid;
       }
     }
   });
