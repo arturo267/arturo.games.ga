@@ -197,6 +197,7 @@ function loop() {
 
   // draw ball if it's moving
   if (ball.dx || ball.dy) {
+    context.fillStyle = 'red';
     context.fillRect(ball.x, ball.y, ball.width, ball.height);
   }
 
@@ -207,7 +208,7 @@ function loop() {
   });
 
   // draw paddle
-  context.fillStyle = 'cyan';
+  context.fillStyle = 'black';
   context.fillRect(paddle.x, paddle.y, paddle.width, paddle.height);
 }
 
