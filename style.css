@@ -10,3 +10,10 @@
   transition-duration: 0.4s;
   cursor: pointer;
 } 
+.h1 {
+  background: rgb(0,36,14);
+  background: linear-gradient(90deg, rgba(0,36,14,1) 0%, rgba(0,255,1,1) 53%, rgba(0,255,126,1) 87%);;
+  font-size: 20px;
+  
+  
+}
