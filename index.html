@@ -23,7 +23,33 @@
     background: linear-gradient(90deg, rgba(33,171,84,1) 0%, rgba(0,255,1,1) 53%, rgba(0,174,255,1) 87%);
 
  }
-
+ .top-buttons {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        
+        }
+        .pro-button {
+            background-color: #007bff;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 12px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .pro-button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+        .pro-button:active {
+            background-color: #004085;
+        }
  </style>
 
     <meta charset="UTF-8">
@@ -32,7 +58,9 @@
 
 </head>
 <body>
- 
+    <div class="top-buttons">
+        <a href="Mc1.9.html" class="pro-button">Minecraft 1.9.2</a>
+ </div>
     <h1>Game website!</h1>
     <button><a href="https://arturo267.github.io/Mc1.9.html"> Minecraft 1.9.2 </a></button>
     <br>
