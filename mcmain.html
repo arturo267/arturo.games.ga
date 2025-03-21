@@ -1,95 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- this is the font for the website, the code is grabbed from google fonts-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">  
-    
-    <style>
-        h1 {
-            text-align: center;
-            font-size: 10vw;  /* Already in vw */
-            letter-spacing: 0.42vw; /* 5px converted to vw based on 1200px screen width */
-            text-shadow: 0.33vw 0.33vw 0.67vw black, -0.33vw -0.33vw 0.67vw black, 0.33vw -0.33vw 0.67vw black, -0.33vw 0.33vw 0.67vw black; /* Converted to vw */
-        }
-    
-        h2 {
-            text-align: center;
-            font-size: 4vw;
-            margin-top: -10vw; 
-         }
-    
-        body {
-            color: white;
-            background-image: url('MineCraftBg.png');
-            background-repeat: repeat-x; 
-            background-size: cover; 
-            font-family: 'Jersey 10', sans-serif; 
-            font-weight: normal;
-            text-shadow: 0.17vw 0.17vw 0.33vw rgb(0, 0, 0), -0.17vw -0.17vw 0.33vw rgb(0, 0, 0), 0.17vw -0.17vw 0.33vw rgb(0, 0, 0), -0.17vw 0.17vw 0.33vw rgb(0, 0, 0); /* Converted to vw */
-        }
-    
-        .button {
-            color: blue;
-        }
-    
-        .html {
-            background: rgb(33,171,84);
-            background: linear-gradient(90deg, rgba(33,171,84,1) 0%, rgba(0,255,1,1) 53%, rgba(0,174,255,1) 87%);
-        }
-    
-        .top-buttons {
-            display: flex;
-            justify-content: center;
-            padding: 0;
-        }
-    
-        .pro-button {
-            background-color: black;
-            border: none;
-            color: rgb(255, 255, 255);
-            padding: 0;  /* Remove padding to make it easier to center */
-            text-align: center;
-            text-decoration: none;
-            display: flex;  /* Use flexbox for centering */
-            justify-content: center;  /* Center text horizontally */
-            align-items: center;  /* Center text vertically */
-            font-size: 2.5vw; /* 30px converted to vw */
-            margin: 0.33vw 0.17vw;  /* 4px 2px converted to vw */
-            cursor: pointer;
-            border-radius: 0px;
-            transition: background-color 1s ease, transform 1s ease, font-size 0.3s ease; /* Add font-size transition */
-            border: 0.5vw solid #ffffff; /* 6px converted to vw */
-            width: 33.33vw;  /* 400px converted to vw */
-            height: 4.17vh;  /* 50px converted to vh based on a typical screen height of 800px (5% of screen height) */
-        }
-    
-        .pro-button:hover {
-            background-color: #000000;
-            transform: scale(1.05);
-            font-size: 2.67vw; /* 32px converted to vw */
-        }
-    
-        .pro-button:active {
-            background-color: #000000;
-            transform: scale(1.15);
-            font-size: 3.33vw; /* 40px converted to vw */
-        }
-    </style>
-    
-
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="mc.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Games</title>
-
+    <title>CG!</title>
+    <link rel="icon" type="image/x-icon" href="Images/dirtblock.png">
 </head>
 <body>
     <h1>Minecraft</h1>
     <h2>Game versions available below.</h2>
-
+    
+    <div class="back-button-container">
+        <a id="backButton" class="pro-button-back"> Back to main screen. </a>
+        
+    </div>
     <div class="top-buttons">
         <a href="McVersions/Mc1.12.html" class="pro-button">Minecraft 1.12</a>
+    </div>
+    <div class="top-buttons">
+        <a href="McVersions/Mc1.9.html" class="pro-button">Minecraft 1.9 (1.21 textures)</a>
     </div>
     <div class="top-buttons">
         <a href="McVersions/Mc1.8.8.html" class="pro-button">Minecraft 1.8.8</a>
@@ -106,5 +37,25 @@
     <div class="top-buttons">
       <a href="McVersions/Mc.1.2.6.html" class="pro-button">Minecraft 1.2.6</a>
     </div>
+
+    <script>
+        let timeoutID; // Declare timeoutID globally
+    
+        function goBack() {
+            timeoutID = setTimeout(function() {
+                window.location.href = 'index.html'; // Change to your desired URL
+            }, 1500);
+        }
+    
+        function stopTimeOut() {
+            clearTimeout(timeoutID); // Clears the timeout when mouse leaves
+        }
+    
+        // Add event listeners
+        document.getElementById('backButton').addEventListener('mouseenter', goBack);
+        document.getElementById('backButton').addEventListener('mouseleave', stopTimeOut);
+    </script>    
+    
+    <script src="js/dirtblockmake.js"></script>
 </body>
 </html>

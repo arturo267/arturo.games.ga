@@ -1,2 +1,3 @@
 # arturo267.github.io
-is cool
+This is a cool website we're working on! 
+More things will be added in the future. 
