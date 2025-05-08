@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="img/extra/capone-1296514_1280.png" type="image/x-icon">
+    <link rel="stylesheet" href="impressum.html">
+    <script src="models/drawable-object.class.js"></script>
+    <script src="models/movable-object.class.js"></script>
+    <script src="models/character.class.js"></script>
+    <script src="models/no_gun_enemy.class.js"></script>
+    <script src="models/endboss.class.js"></script>
+    <script src="models/status-bar.class.js"></script>
+    <script src="models/boss-statusbar.class.js"></script>
+    <script src="models/ammo-bar.class.js"></script>
+    <script src="models/world.class.js"></script>
+    <script src="models/sky.class.js"></script>
+    <script src="models/money.class.js"></script>
+    <script src="models/Background-object.class.js"></script>
+    <script src="models/keyboard.class.js"></script>
+    <script src="models/parallax-background.class.js"></script>
+    <script src="models/ammoPackag.class.js"></script>
+    <script src="models/shooting-ammo.class.js"></script>
+    <script src="models/shoot-enemy-ammo.class.js"></script>
+    <script src="models/money-bar.class.js"></script>
+    <script src="models/level.class.js"></script>
+    <script src="levels/level_1.js"></script>
+    <script src="js/game.js"></script>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mafia 5</title>
+</head>
+
+<body id="fullscreen" onload="init()">
+    <div class="rotetYourPhone">
+        <img class="turn" src="img/extra/synchronous-2398786_1280.png" alt="">
+        <p class="info-text">Please rotate your Phone</p>
+    </div>
+    <div class="content">
+        <div class="headline">MAFIA 5</div>
+        <div id="startScreen" class="startScreen">
+            <div>
+                <button onclick="start()" class="btn cursor">Start</button>
+            </div>
+        </div>
+        <div class="canvas-content">
+            <div id="loseOrWinScreen" class="loseOrWinScreen d-none"></div>
+        <canvas id="canvas" class="d-none" width="720px" height="480px"></canvas>
+        <div id="top-hud" class="top-hud d-none">
+            <div class="hud-left">
+                <img id="controll-left" class="hud-controll" src="img/HUD/L_Taste.png" alt="">
+                <img id="controll-right" class="hud-controll" src="img/HUD/R_Taste.png" alt="">
+            </div>
+            <div class="hud-right">
+                <img id="controll-shoot" class="hud-controll" src="img/HUD/X_Taste.png" alt="">
+                <img id="controll-jump" class="hud-controll" src="img/HUD/Kreis_Taste.png" alt="">
+            </div>
+        </div>
+        </div>
+        <div id="bottom-hud" class="bottom-hud">
+            <div id="hud-content" class="hud-content">
+                <div id="controll-sound"><img onclick="switchToUnmute()" id="controll-sound_mute"
+                        class="hud-controll cursor"
+                        src="img/HUD/Prinbles_GUI_Asset_Silent (1.0.0)/Prinbles_GUI_Asset_Silent (1.0.0)/Mute_Icon.svg.png"
+                        alt=""></img></div>
+                <img id="controll-restart" onclick="clearWorld()" class="hud-controll cursor"
+                    src="img/HUD/Prinbles_GUI_Asset_Silent (1.0.0)/Prinbles_GUI_Asset_Silent (1.0.0)/restart-icon-9.png"
+                    alt="">
+                <div id="controll-fullscreen"><img onclick="switchToFullscreen()" class="hud-controll-fullscreen cursor"
+                        src="img/HUD/Prinbles_GUI_Asset_Silent (1.0.0)/Prinbles_GUI_Asset_Silent (1.0.0)/6398940.png"
+                        alt=""></div>
+            </div>
+        </div>
+        <div class="moving-infos">
+            <div class="move-infos">
+                <span class="moving-info-text">Move</span>
+                <div>
+                    <img class="img" src="img/infos/Taste_A.png" alt="">
+                    <img class="img" src="img/infos/Taste_D.png" alt="">
+                </div>
+            </div>
+            <div class="move-infos">
+                <span class="moving-info-text">Jump</span>
+                <img class="img" src="img/infos/Taste_Space.png" alt="">
+            </div>
+            <div class="move-infos">
+                <span class="moving-info-text">Shoot</span>
+                <img class="img" src="img/infos/Taste_F.png" alt="">
+            </div>
+        </div>
+        <div id="impressum-content" class="impressum-content"><a class="impressum-link"
+                href="impressum.html">Impressum</a></div>
+    </div>
+
+
+</body>
+
+</html>

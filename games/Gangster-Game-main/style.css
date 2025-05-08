@@ -1,0 +1,603 @@
+body,
+html {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    background-color: black;
+    scrollbar-width: none;
+    overflow: hidden;
+    background-image: url('img/extra/city_night_life_644e4b87-d416-4e86-89a0-cd6882ddef7d.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    font-family: 'Faithfully';
+    padding: 0;
+    margin: 0;
+}
+
+canvas {
+    background-color: black;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@font-face {
+    font-family: 'Faithfully';
+    src: url('fonts/Faithfully.ttf') format('truetype');
+}
+
+
+.headline {
+    -webkit-text-stroke: 1px rgb(255, 255, 255);
+    font-family: 'Faithfully';
+    color: rgb(0, 0, 0);
+    font-size: 100px;
+    font-weight: 300;
+    display: flex;
+}
+
+.moving-info-text {
+    font-size: 50px;
+    -webkit-text-stroke: 0.5px rgb(255, 255, 255);
+    font-family: 'Faithfully';
+    color: rgb(0, 0, 0);
+}
+
+.moving-infos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+    margin-bottom: 100px;
+}
+
+.btn {
+    -webkit-text-stroke: 0.5px rgb(255, 255, 255);
+    font-family: 'Faithfully';
+    color: rgb(0, 0, 0);
+    margin-top: 20px;
+    margin-bottom: 10px;
+    background-color: #111111;
+    border: 1px solid;
+    color: white;
+    padding: 15px 42px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 26px;
+}
+
+.move-infos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.img {
+    height: 80px;
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+.d-none {
+    display: none !important;
+}
+
+.startScreen {
+    background-image: url('img/extra/a text in the m e2167f74-e106-4ae6-b178-cb57f0129bcb.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 480px;
+    width: 720px;
+    top: 125px;
+    z-index: 2;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+}
+
+.hud-left {
+    display: none;
+    gap: 30px;
+    z-index: 10;
+}
+
+.hud-controll {
+    height: 40px;
+    gap: 20px;
+}
+
+.hud-right {
+    display: none;
+    gap: 30px;
+    z-index: 10;
+}
+
+.top-hud {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 0;
+}
+
+.hud-content {
+    display: flex;
+    gap: 30px;
+    z-index: 10;
+    align-items: center;
+}
+
+
+.bottom-hud {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    top: -466px;
+    right: 18px;
+    justify-content: end;
+    z-index: 100;
+}
+
+.hud-controll-fullscreen {
+    height: 50px;
+    gap: 20px;
+    display: flex;
+}
+
+.rotetYourPhone {
+    display: none;
+}
+
+.info-text {
+    color: white;
+}
+
+.turn {
+    height: 80px;
+}
+
+.loseOrWinScreen {
+    background-color: rgba(0, 0, 0, 0.315);
+    width: 720px;
+    height: 480px;
+    z-index: 99;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.youLoseYouWin {
+    height: 50px;
+}
+
+.wlcontent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+canvas {
+    z-index: 1;
+}
+
+
+.impressum-link {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-weight: 700;
+    font-size: 30px;
+}
+
+.impressum-link:hover {
+    color: rgb(182, 178, 178);
+}
+
+.imprint {
+    color: white;
+    padding: 40px;
+    font-size: 18px;
+    overflow-y: scroll;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.788);
+}
+
+.imress {
+    color: rgb(255, 255, 255);
+    padding: 100px;
+}
+
+/* .canvas-content canvas,
+    .loseOrWinScreen {
+        position: absolute;
+    } */
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+
+@media only screen and (max-height: 420px) {
+    canvas {
+        height: 100vh;
+        margin-bottom: 0;
+        width: 100vw;
+    }
+
+    .headline {
+        display: none;
+    }
+
+    .startScreen {
+        height: 100vh;
+    }
+
+    .content {
+        height: 100%;
+        width: 100%;
+    }
+
+    .canvas-content canvas,
+    .loseOrWinScreen {
+        /* position: absolute; */
+    }
+
+    .canvas-content {
+        position: relative;
+    }
+
+    .moving-infos {
+        display: none;
+    }
+
+    .hud-content {
+        display: flex;
+    }
+
+    .hud-controll-fullscreen {
+        display: none;
+    }
+
+    .bottom-hud {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        top: 60px;
+        right: 90px;
+        justify-content: end;
+    }
+
+    .rotetYourPhone {
+        display: none !important;
+    }
+
+    .bottom-hud {
+        top: 22px !important;
+        right: 0px !important;
+    }
+
+    .loseOrWinScreen {
+        width: 100vw !important;
+        height: 100vh !important;
+    }
+
+    .impressum-content {
+        position: absolute;
+        z-index: 100;
+    }
+
+    .imprint {
+        overflow-y: scroll;
+    }
+
+    .hud-left {
+        display: flex;
+    }
+
+    .hud-right {
+        display: flex;
+    }
+}
+
+@media only screen and (width:1024px) and (height:768px) {
+    .moving-infos {
+        margin-bottom: 0;
+    }
+
+    .move-infos {
+        gap: 0;
+    }
+
+    .hud-right {
+        display: flex;
+    }
+
+    .hud-left {
+        display: flex;
+    }
+
+    .top-hud {
+        width: 70%;
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        bottom: 190px;
+    }
+}
+
+@media only screen and (width:1180px) and (height:820px) {
+    .moving-infos {
+        margin-bottom: 0;
+    }
+
+    .move-infos {
+        gap: 0;
+    }
+
+    .hud-right {
+        display: flex;
+    }
+
+    .hud-left {
+        display: flex;
+    }
+
+    .top-hud {
+        width: 61%;
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        bottom: 214px;
+    }
+}
+
+@media only screen and (width:1366px) and (height:1024px) {
+    .hud-right {
+        display: flex;
+    }
+
+    .hud-left {
+        display: flex;
+    }
+
+    .top-hud {
+        width: 52%;
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        bottom: 378px;
+    }
+}
+
+@media only screen and (width:768px) and (height:1024px) {
+    .hud-right {
+        display: flex;
+    }
+
+    .hud-left {
+        display: flex;
+    }
+
+    .top-hud {
+        width: 94%;
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        bottom: 378px;
+    }
+}
+
+@media only screen and (width:820px) and (height:1180px) {
+    .hud-right {
+        display: flex;
+    }
+
+    .hud-left {
+        display: flex;
+    }
+
+    .top-hud {
+        width: 88%;
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        bottom: 455px;
+
+    }
+}
+
+@media only screen and (width:1024px) and (height:1366px) {
+    .hud-right {
+        display: flex;
+    }
+
+    .hud-left {
+        display: flex;
+    }
+
+    .top-hud {
+        width: 70%;
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        bottom: 545px;
+    }
+}
+
+@media only screen and (width:912px) and (height:1368px) {
+    .hud-right {
+        display: flex;
+    }
+
+    .hud-left {
+        display: flex;
+    }
+
+    .top-hud {
+        width: 79%;
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        bottom: 545px;
+    }
+}
+
+@media only screen and (width:1368px) and (height:912px) {
+    .hud-right {
+        display: flex;
+    }
+
+    .hud-left {
+        display: flex;
+    }
+
+    .top-hud {
+        width: 52%;
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        bottom: 320px;
+    }
+}
+
+@media only screen and (width:853px) and (height:1280px) {
+    .hud-right {
+        display: flex;
+    }
+
+    .hud-left {
+        display: flex;
+    }
+
+    .top-hud {
+        width: 84%;
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        bottom: 506px;
+    }
+}
+
+@media only screen and (width:1280px) and (height:853px) {
+    .hud-right {
+        display: flex;
+    }
+
+    .hud-left {
+        display: flex;
+    }
+
+    .top-hud {
+        width: 56%;
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        bottom: 291px;
+    
+    }
+}
+
+
+
+@media only screen and (width:932px) and (height:430px) {
+    .moving-infos {
+        display: none;
+    }
+
+    .headline {
+        display: none;
+    }
+
+    .content {
+        width: 100vw;
+        height: 100vh;
+    }
+
+    canvas {
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .loseOrWinScreen {
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .hud-right {
+        display: flex;
+    }
+
+    .hud-left {
+        display: flex;
+    }
+
+    .top-hud {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        bottom: 2px;
+    }
+}
+
+@media only screen and (max-width: 720px) {
+    canvas {
+        width: 100vw;
+        margin-bottom: 0;
+    }
+
+    .hud-right {
+        display: flex;
+    }
+
+    .hud-left {
+        display: flex;
+    }
+
+    .content {
+        width: 100%;
+    }
+
+    .startScreen {
+        width: 100vw;
+    }
+
+    .headline {
+        display: none;
+    }
+
+    .rotetYourPhone {
+        display: flex;
+        z-index: 999;
+        background-color: black;
+        height: 100%;
+        width: 106%;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .loseOrWinScreen {
+        display: flex;
+        width: 100%;
+    }
+}

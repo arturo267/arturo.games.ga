@@ -78,6 +78,7 @@
             justify-content: center;
             padding: 0;
             margin: 10px 0;
+            z-index: 3;
         }
     
         .pro-button {
@@ -98,7 +99,7 @@
             border: 0.5vw solid #ffffff; 
             width: 33.33vw;  
             height: 4.17vh; 
-            z-index: 3;
+            z-index: 2;
         }
     
         .pro-button:hover {
@@ -140,7 +141,7 @@
             height: 10vw;
             background-color: #ffffff;
             position: absolute;
-            z-index: 1;
+            z-index: 0;
             bottom: -10vw; /* Start from below the screen */
             opacity: 0.5;
             animation: popUp 3s linear forwards;
@@ -160,10 +161,97 @@
                 bottom: 100%;
                 opacity: 0.25;
             }
-        }       
+        }  
+        
+        /* Dropdown Button */
+        .dropbtn { 
+            display: flex;
+            justify-content: center;
+            background-color: black;
+            color: rgba(255, 255, 255, 0.5);
+            padding: 0;  
+            text-align: center;
+            text-decoration: none;
+            display: flex; 
+            justify-content: center; 
+            align-items: center;
+            font-size: 2.5vw; 
+            margin: 0vw 0vw; 
+            cursor: pointer;
+            border: 0.5vw solid #ffffff; 
+            width: 15vw;  
+            height: 6.17vh; /* Match .search-bar */
+            font-family: 'Jersey 10', sans-serif; 
+            font-weight: normal;
+            z-index: 4;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .dropchildbtn { 
+            background-color: black;
+            color: rgba(255, 255, 255, 0.5);
+            text-align: center;
+            text-decoration: none;
+            font-size: 1.5vw;
+            cursor: pointer;
+            width: 14vw;
+            height: 3vh;
+            font-family: 'Jersey 10', sans-serif;
+            font-weight: normal;
+            z-index: 4;
+            padding: 0;
+            margin: 0;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            outline: none;
+            border: none;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Test here for dropdown */
+
+        /* The container <div> - needed to position the dropdown content */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Links inside the dropdown */
+        .dropdown-content {
+            text-shadow: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            display: none;
+            flex-direction: column;
+            background: rgba(0, 0, 0, 1);
+            width: 14.05vw;
+            border: 0.5vw solid rgb(255, 255, 255); 
+            font-size: 1.5vw;
+            height: auto;
+            overflow-y: hidden; /* Prevent the scrollbar from appearing */
+            z-index: 10;
+        }
+
+        /* Change color of dropdown links on hover */
+        .dropchildbtn:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+            color: #ffffff;
+        }
+
+        .dropbtn:hover {
+            background-color: rgb(87, 87, 87);
+            color: #ffffff;
+        }
+
+        /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+        .show {display: flex;}
+
+        /* test end for dropdown */
 
         .search-bar {
-            text-shadow: 0.33vw 0.33vw 0.67vw black, -0.33vw -0.33vw 0.67vw black, 0.33vw -0.33vw 0.67vw black, -0.33vw 0.33vw 0.67vw black; 
             display: flex;
             justify-content: center;
             padding: 0;
@@ -181,13 +269,22 @@
             cursor: pointer;
             border-radius: 0px;
             border: 0.5vw solid #ffffff; 
-            width: 33.33vw;  
+            width: 20vw;  
             height: 4.17vh; 
             font-family: 'Jersey 10', sans-serif; 
             font-weight: normal;
             text-shadow: 0.17vw 0.17vw 0.33vw rgb(0, 0, 0), -0.17vw -0.17vw 0.33vw rgb(0, 0, 0), 0.17vw -0.17vw 0.33vw rgb(0, 0, 0), -0.17vw 0.17vw 0.33vw rgb(0, 0, 0);
             z-index: 2;
         }
+
+        .search-bar-container {
+            display: flex;
+            justify-content: flex-start; /* or center or space-between depending on layout */
+            align-items: center; /* ensures both bars are on the same Y level */
+            gap: 1vw; /* spacing between bars */
+            margin: 10px; /* optional */
+            z-index: 4;
+        }   
 
         input[type="text"].search-bar:focus {
             outline: none; /* Remove the default outline on focus */
@@ -202,107 +299,184 @@
 </head>
 <body>
     <h1>Cool games!</h1>
-    <h2>Video juegos muy profesionales.</h2>
+    <h2>Mas videojuegos profesionales?!?!</h2>
 
     <!-- Search bar for games -->
+
     <div class="top-buttons">
-        <input type="text" id="search" class="search-bar" placeholder="Search for a game..." onkeyup="filterGames()">
+        <div class="search-bar-container">
+            <input type="text" id="search" class="search-bar" placeholder="Search for a game..." onkeyup="filterGames()">
+            <div class = "dropdown">
+                <button onclick="myFunction()" id="sortButton" class="dropbtn">All games</button>
+                <div id="myDropdown" class="dropdown-content">
+                    <button class="dropchildbtn" onclick="filterByCategory('3D games')">3D</button>
+                    <button class="dropchildbtn" onclick="filterByCategory('2D games')">2D</button>
+                    <button class="dropchildbtn" onclick="filterByCategory('Puzzle games')">Puzzle</button>
+                    <button class="dropchildbtn" onclick="filterByCategory('Gambling games')">Gambling</button>
+                    <button class="dropchildbtn" onclick="filterByCategory('2-player games')">2-player</button>
+                    <button class="dropchildbtn" onclick="filterByCategory('Nintendo games')">Nintendo</button>
+                    <button class="dropchildbtn" onclick="filterByCategory('all')">Show All</button>
+                </div>
+            </div>
+        </div>
     </div>
+    
 
     <!-- Scrollable game buttons -->
     <div class="scroll-box" id="gameList">
-        <div class="top-buttons">
+        <div class="top-buttons" data-category="3D games">
             <a href="mcmain.html" class="pro-button">Play Minecraft.</a>
         </div>
-        <div class="top-buttons">
+        <div class="top-buttons" data-category="3D games">
             <a href="games/Slope-Game-main/start.html" class="pro-button">Play Slope.</a>
         </div>
-        <div class="top-buttons">
+        <div class="top-buttons" data-category="Puzzle games">
             <a href="games/2048-master/start.html" class="pro-button">Play 2048.</a>
         </div>
-        <div class="top-buttons">
+        <div class="top-buttons" data-category="3D games">
             <a href="games/polytrack-main/index.html" class="pro-button">Play Poly Track.</a>
         </div>
-        <div class="top-buttons">
+        <div class="top-buttons" data-category="Puzzle games">
             <a href="games\tetralegends-master\tetralegends-master\index.html" class="pro-button">Play Tetra Legends.</a>
         </div>
-        <div class="top-buttons">
+        <div class="top-buttons" data-category="2D games">
             <a href="games/n-gon-master/n-gon-master/index.html" class="pro-button">Play N-Gon.</a>
         </div>
-        <div class="top-buttons">
+        <div class="top-buttons" data-category="2D games">
             <a href="games/flappy-gh-pages/flappy-gh-pages/index.html" class="pro-button">Play Flappy Bird.</a>
         </div>
-        <div class="top-buttons">
+        <div class="top-buttons" data-category="2D games">
             <a href="games/cookieclicker-gh-pages/cookieclicker-gh-pages/index.html" class="pro-button">Play Cookie Clicker.</a>
         </div>
-        <div class="top-buttons">
+        <div class="top-buttons" data-category="Puzzle games">
             <a href="games/minesweeper-master/minesweeper-master/index.html" class="pro-button">Play Mine Sweeper.</a>
         </div>
-        <div class="top-buttons">
+        <div class="top-buttons" data-category="Gambling games">
             <a href="games/blackjack/index.html" class="pro-button">Play Black Jack.</a>
         </div>
-        <div class="top-buttons">
+        <div class="top-buttons" data-category="2-player games">
             <a href="games/rooftop-snipers/index.html" class="pro-button">Play Rooftop Snipers.</a>
         </div>
-        <div class="top-buttons">
+        <div class="top-buttons" data-category="Puzzle games">
             <a href="games/CutTheRope-master/index.html" class="pro-button">Play Cut The Rope.</a>
         </div>
-        <div class="top-buttons">
+        <div class="top-buttons" data-category="2D games">
             <a href="games/MindustryClassicMirror-main/MindustryClassicMirror-main/web/game.html" class="pro-button">Play Minedustry.</a>
         </div>
-        <div class="top-buttons">
+        <div class="top-buttons" data-category="2D games">
             <a href="games/learntofly/index.html" class="pro-button">Play Learn To Fly.</a>
         </div>
-        <div class="top-buttons">
+        <div class="top-buttons" data-category="2D games">
             <a href="games/learntofly2/index.html" class="pro-button">Play Learn To Fly 2.</a>
         </div>
-        <div class="top-buttons">
+        <div class="top-buttons" data-category="2D games">
             <a href="games/stickman/index.html" class="pro-button">Play Stickman Hook.</a>
         </div>
-        <div class="top-buttons">
+        <div class="top-buttons" data-category="3D games">
             <a href="games/subwaysurf/index.html" class="pro-button">Play Subway Surfers.</a>
         </div>
-        <div class="top-buttons">
+        <div class="top-buttons" data-category="2D games">
             <a href="games/retrobowl/index.html" class="pro-button">Play Retro Bowl.</a>
         </div>
-        <div class="top-buttons">
+        <div class="top-buttons" data-category="2D games">
             <a href="games/MotoX3M-master/MotoX3M-master/index.html" class="pro-button">Play Moto X3M.</a>
         </div>
-        <div class="top-buttons">
+        <div class="top-buttons" data-category="2D games">
             <a href="games/moto-x3m-2-main/moto-x3m-2-main/index.html" class="pro-button">Play Moto X3M 2.</a>
         </div>
-        <div class="top-buttons">
+        <div class="top-buttons" data-category="2D games">
             <a href="games/Moto-X3M-Winter-main/Moto-X3M-Winter-main/index.html" class="pro-button">Play Moto X3M Winter.</a>
         </div>
-        <div class="top-buttons">
+        <div class="top-buttons" data-category="2D games">
             <a href="games/ovo/index.html" class="pro-button">Play OvO.</a>
         </div>
-         <div class="top-buttons">
-            <a href="games/pacman-lite-master/index.html" class="pro-button">Play Pac-Man.</a>
+        <div class="top-buttons" data-category="2D games">
+            <a href="games/pacman-lite-master/index.html" class="pro-button">Play Pacman.</a>
+        </div>
+        <div class="top-buttons" data-category="2-player games">
+            <a href="games/basketrandom/index.html" class="pro-button">Play Basket Randoms.</a>
+        </div>
+        <div class="top-buttons" data-category="2-player games">
+            <a href="games/Boxing-Random-gh-pages/index.html" class="pro-button">Play Boxing Randoms.</a>
+        </div>
+        <div class="top-buttons" data-category="2-player games">
+            <a href="games/volleyrandom/index.html" class="pro-button">Play Volley Randoms.</a>
+        </div>
+        <div class="top-buttons" data-category="2-player games">
+            <a href="games/soccerrandom/index.html" class="pro-button">Play Soccer Randoms.</a>
+        </div>
+        <div class="top-buttons" data-category="2D games">
+            <a href="games/burrito/index.html" class="pro-button">Play Burrito Bison.</a>
+        </div>
+        <div class="top-buttons" data-category="2D games">
+            <a href="games/clash-tanks/index.html" class="pro-button">Play Clash Of Tanks.</a>
+        </div>
+        <div class="top-buttons" data-category="2D games">
+            <a href="games/crossy/index.html" class="pro-button">Play Crossy Road.</a>
+        </div>
+        <div class="top-buttons" data-category="2D games">
+            <a href="games/deepest-sword/index.html" class="pro-button">Play Deepest Sword.</a>
+        </div>
+        <div class="top-buttons" data-category="2D games">
+            <a href="games/doodle-jump/index.html" class="pro-button">Play Doodle Jump.</a>
+        </div>
+        <div class="top-buttons" data-category="2-player games">
+            <a href="games/fireboy-and-watergirl-1/index.html" class="pro-button">Play Fireboy & Watergirl 1.</a>
+        </div>
+        <div class="top-buttons" data-category="2-player games">
+            <a href="games/fireboy-and-watergirl-2/index.html" class="pro-button">Play Fireboy & Watergirl 2.</a>
+        </div>
+        <div class="top-buttons" data-category="2-player games">
+            <a href="games/fireboy-and-watergirl-3/index.html" class="pro-button">Play Fireboy & Watergirl 3.</a>
+        </div>
+        <div class="top-buttons" data-category="2-player games">
+            <a href="games/fireboy-and-watergirl-4/index.html" class="pro-button">Play Fireboy & Watergirl 4.</a>
+        </div>
+        <div class="top-buttons" data-category="2-player games">
+            <a href="games/fireboy-and-watergirl-5/index.html" class="pro-button">Play Fireboy & Watergirl 5.</a>
+        </div>
+        <div class="top-buttons" data-category="2-player games">
+            <a href="games/fireboy-and-watergirl-6/index.html" class="pro-button">Play Fireboy & Watergirl 6.</a>
+        </div>
+        <div class="top-buttons" data-category="2D games">
+            <a href="games/jetpack-joyride/index.html" class="pro-button">Play Jeckpack Joyride.</a>
+        </div>
+        <div class="top-buttons" data-category="Nintendo games">
+            <a href="games/mario64/sm64/index.html" class="pro-button">Super Mario 64.</a>
+        </div>
+        <div class="top-buttons" data-category="3D games">
+            <a href="games/snow-rider/index.html" class="pro-button">Snow Rider 3D.</a>
+        </div>
+        <div class="top-buttons" data-category="2D games">
+            <a href="games/evil-glitch/index.html" class="pro-button">Play Evil Glich.</a>
+        </div>
+        <div class="top-buttons" data-category="2D games">
+            <a href="games/awesometanks2/index.html" class="pro-button">Play Awesome Tanks 2.</a>
+        </div>
+        <div class="top-buttons" data-category="2D games">
+            <a href="games/awesometanksfiles/index.html" class="pro-button">Play Awesome Tanks.</a>
+        </div>
+        <div class="top-buttons" data-category="2D games">
+            <a href="games/monkeymart/monkey.html" class="pro-button">Play Monkey Mart.</a>
+        </div>
+        <div class="top-buttons" data-category="Puzzle games">
+            <a href="games/BlockBlast-main/index.html" class="pro-button">Play Block Blast.</a>
+        </div>
+        <div class="top-buttons" data-category="Puzzle games">
+            <a href="games/Maze3D-master/Maze3D-master/index.html" class="pro-button">Play Maze Master.</a>
+        </div>
+        <div class="top-buttons" data-category="Puzzle games">
+            <a href="games/mari0_3d_web-main/index.html" class="pro-button">Play Mari0 - 3d.</a>
+        </div>
+        <div class="top-buttons" data-category="Puzzle games">
+            <a href="games/testmari0/mari0/index.html" class="pro-button">Play Mari0 - 2d.</a>
+        </div>
+        <div class="top-buttons" data-category="2-player games">
+            <a href="games/Gangster-Game-main/index.html" class="pro-button">Play Gangsters.</a>
         </div>
     </div>
 
     <script src="js/squaremake.js"></script>
-
-    <script>
-        // Function to filter games based on search input
-        function filterGames() {
-            var input, filter, gameList, gameButtons, buttonText;
-            input = document.getElementById('search');
-            filter = input.value.toLowerCase();
-            gameList = document.getElementById('gameList');
-            gameButtons = gameList.getElementsByClassName('top-buttons');
-            
-            // Loop through all buttons and hide those that don't match the search input
-            for (var i = 0; i < gameButtons.length; i++) {
-                buttonText = gameButtons[i].textContent || gameButtons[i].innerText;
-                if (buttonText.toLowerCase().indexOf(filter) > -1) {
-                    gameButtons[i].style.display = "";
-                } else {
-                    gameButtons[i].style.display = "none";
-                }
-            }
-        }
-    </script>
+    <script src="js/mainindex.js"></script>
 </body>
 </html>
