@@ -8,12 +8,13 @@
 	<style>
 		canvas {
 			position: absolute;
-			height: 100%; width: 100%;
-			border: none;
+			top: 50%; left: -50%;
+			transform: translate(-50%, -50%);
+			border: 1px solid black;
 		}
 	</style>
 	<body>
-		<canvas></canvas>
+		<canvas width="500" height="500"></canvas>
 		<script>
 			class Vector2 {
 				constructor(x, y){
