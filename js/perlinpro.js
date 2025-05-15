@@ -96,9 +96,9 @@ function fbm(x, y, z, octaves = 1) {
 // color change to depending height
 const palette = [
   [255, 175, 255],      
-  [100, 200, 255], 
+  [150, 200, 255], 
   [0, 0, 0],  
-  [242, 100, 255],  
+  [242, 150, 255],  
   [253, 175, 255]   
 ];
 
