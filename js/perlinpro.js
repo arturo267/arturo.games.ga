@@ -150,8 +150,8 @@ function render() {
   }
   // yipee drawing :D
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  //ctx.imageSmoothingEnabled = true; disabled smoothing and smoothing quality. 
-  //ctx.imageSmoothingQuality = 'high';
+  ctx.imageSmoothingEnabled = false; //disabled smoothing and smoothing quality. 
+  ctx.imageSmoothingQuality = 'low';
   ctx.drawImage(lowResCanvas, 0, 0, canvas.width, canvas.height);
 
   time += 0.005; // adds the time the more the faster
