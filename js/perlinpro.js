@@ -2,7 +2,7 @@
 const canvas = document.getElementById("mycanvas");
 const ctx = canvas.getContext("2d");
 
-const scaleFactor = 13; // controls detail vs performance (do not set to low or chormebook will get invented, THE F STUDENTS ARE THE INVENTORS!!!)
+const scaleFactor = 18; // controls detail vs performance (do not set to low or chormebook will get invented, THE F STUDENTS ARE THE INVENTORS!!!)
 const lowResCanvas = document.createElement("canvas");
 const lowResCtx = lowResCanvas.getContext("2d");
 
@@ -88,7 +88,7 @@ function fbm(x, y, z, octaves = 1) {
     x = nx;
     y = ny;
     frequency *= 0.01;
-    amplitude *= 0.7;
+    amplitude *= 0.5;
   }
   return value;
 }
@@ -97,7 +97,7 @@ function fbm(x, y, z, octaves = 1) {
 const palette = [
   [255, 175, 255],      
   [0, 200, 255], 
-  [50, 50, 50],  
+  [0, 0, 0],  
   [242, 0, 255],  
   [253, 175, 255]   
 ];
