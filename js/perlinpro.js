@@ -97,9 +97,9 @@ function fbm(x, y, z, octaves = 1) {
 const palette = [
   [34, 52, 54],      
   [173, 216, 230],  
-  [58, 72, 77],    
-  [173, 216, 230],  
-  [92, 123, 87]   
+  [71, 57, 77],    
+  [233, 124, 255],  
+  [112, 71, 111]   
 ];
 
 // basic linear interpolation for pro
@@ -154,7 +154,7 @@ function render() {
   ctx.imageSmoothingQuality = 'high';
   ctx.drawImage(lowResCanvas, 0, 0, canvas.width, canvas.height);
 
-  time += 0.001;
+  time += 0.005; // adds the time the more the faster
   requestAnimationFrame(render);
 }
 
