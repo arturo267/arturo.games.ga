@@ -96,10 +96,10 @@ function fbm(x, y, z, octaves = 1) {
 // color change to depending height
 const palette = [
   [34, 52, 54],      
-  [0, 221, 255],  
+  [0, 186, 255],  
   [71, 57, 77],    
-  [255, 0, 214],  
-  [112, 71, 111]   
+  [242, 0, 255],  
+  [253, 210, 255]   
 ];
 
 // basic linear interpolation for pro
