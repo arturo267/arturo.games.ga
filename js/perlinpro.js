@@ -96,9 +96,9 @@ function fbm(x, y, z, octaves = 1) {
 // color change to depending height
 const palette = [
   [34, 52, 54],      
-  [173, 216, 230],  
+  [0, 221, 255],  
   [71, 57, 77],    
-  [233, 124, 255],  
+  [255, 0, 214],  
   [112, 71, 111]   
 ];
 
@@ -150,8 +150,8 @@ function render() {
   }
   // yipee drawing :D
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  ctx.imageSmoothingEnabled = true;
-  ctx.imageSmoothingQuality = 'high';
+  //ctx.imageSmoothingEnabled = true; disabled smoothing and smoothing quality. 
+  //ctx.imageSmoothingQuality = 'high';
   ctx.drawImage(lowResCanvas, 0, 0, canvas.width, canvas.height);
 
   time += 0.005; // adds the time the more the faster
