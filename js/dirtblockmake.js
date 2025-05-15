@@ -1,11 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Function to generate a random position on the X-axis
+    // random position function (only x)
     function getRandomPosition() {
         const windowWidth = window.innerWidth;
-        return Math.floor(Math.random() * (windowWidth - 100)); // 100px is the width of the square
+        return Math.floor(Math.random() * (windowWidth - 100)); // 100is the width of the squares
     }
 
-    // Function to create a new square
+    // make square func
     function createSquare() {
         const square = document.createElement('div');
         square.classList.add('square');
@@ -27,22 +27,22 @@ document.addEventListener("DOMContentLoaded", () => {
         square.style.height = randomSize + "vw";        
 
         const randomX = getRandomPosition();
-        square.style.left = `${randomX}px`; // Set random position horizontally
+        square.style.left = `${randomX}px`; // random horizontal position
 
-        // Append the square to the body
+        // put square in frame (body)
         document.body.appendChild(square);
 
-        // Apply animation to the square
+        // make square fly (force feed hydrogen)
         setTimeout(() => {
             square.style.animation = 'popUp '+randomSpeed.toString()+'s linear';
-        }, 10); // Wait for the element to be added to the DOM
+        }, 10); // wait for the square to be added to the DOM
 
-        // Remove square after animation finishes (cleanup)
+        // get the square out of here
         setTimeout(() => {
             square.remove();
-        }, randomSpeed*1000); // Match this time with the animation duration
+        }, randomSpeed*1000); // make the square dissappear right as it is finished moving
     }
 
-    // Create new squares every 500ms
-    setInterval(createSquare, 50);
+    // make new square every 100ms
+    setInterval(createSquare, 100);
 });

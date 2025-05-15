@@ -1,6 +1,6 @@
 var dropdownVisible = false;
 
-        // Function to filter games based on search input
+        //filter games based on input
         function filterGames() {
             var input, filter, gameList, gameButtons, buttonText;
             input = document.getElementById('search');
@@ -18,12 +18,12 @@ var dropdownVisible = false;
             }
         }
 
-        // Function to toggle the dropdown menu
+        // togle dropdown menu function
         function myFunction() {
             document.getElementById("myDropdown").classList.toggle("show");
         }
 
-        // Close the dropdown if the user clicks outside of it
+        // close dropdown if user clicks outside
         window.onclick = function(event) {
             if (!event.target.matches('.dropbtn')) {
                 var dropdowns = document.getElementsByClassName("dropdown-content");
@@ -36,7 +36,7 @@ var dropdownVisible = false;
             }         
         }
 
-        // Function to filter games by category
+        // filter games WITH catergories (caleb wanted me to add sus games in here...)
         function filterByCategory(category) {
             var gameList = document.getElementById('gameList');
             var gameButtons = gameList.getElementsByClassName('top-buttons');
@@ -45,11 +45,11 @@ var dropdownVisible = false;
                 var gameCategory = gameButtons[i].getAttribute('data-category');
                 
                 if (category === 'all') {
-                    gameButtons[i].style.display = ""; // Show all games
+                    gameButtons[i].style.display = ""; // show all the games
                 } else if (gameCategory === category) {
-                    gameButtons[i].style.display = ""; // Show games in the selected category
+                    gameButtons[i].style.display = ""; // only show games in a category
                 } else {
-                    gameButtons[i].style.display = "none"; // Hide other games
+                    gameButtons[i].style.display = "none"; // hide other games
                 }
             }
 
