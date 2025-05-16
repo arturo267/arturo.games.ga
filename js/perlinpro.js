@@ -6,7 +6,7 @@ const scaleFactor = 13; // controls detail vs performance (do not set to low or 
 const lowResCanvas = document.createElement("canvas");
 const lowResCtx = lowResCanvas.getContext("2d");
 
-let value = 0;
+let value2 = 0;
 let time = 0;
 
 function resize() {
@@ -75,7 +75,7 @@ function noise3D(x, y, z) {
 // fractial brownian motion with domain warping inspired by Inigo Quilez (totally not stolen equations) https://iquilezles.org/articles/warp/
 // 
 function fbm(x, y, z, octaves = 1) { 
-  // disabled value = 0; // default value, setting it to -1 or 1 will make it go to the first or last color on the color pallette more
+  let value = 0; // default value, setting it to -1 or 1 will make it go to the first or last color on the color pallette more
   let amplitude = 0.6; // controlss the amplitude (no shit)
   let frequency = 0.6; // controls the frequency of the noise (NO MAMMES??!?!)
 
