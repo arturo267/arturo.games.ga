@@ -155,8 +155,8 @@ function render() {
   ctx.imageSmoothingQuality = 'high';
   ctx.drawImage(lowResCanvas, 0, 0, canvas.width, canvas.height);
 
-  time += 0.005; // adds the time the more the faster
-  value2 = Math.sin(time*10);
+  time += 0.02; // adds the time the more the faster
+  value2 = Math.sin(time/4);
   requestAnimationFrame(render);
 }
 
