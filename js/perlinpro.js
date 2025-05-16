@@ -2,9 +2,11 @@
 const canvas = document.getElementById("mycanvas");
 const ctx = canvas.getContext("2d");
 
-const scaleFactor = 18; // controls detail vs performance (do not set to low or chormebook will get invented, THE F STUDENTS ARE THE INVENTORS!!!)
+const scaleFactor = 13; // controls detail vs performance (do not set to low or chormebook will get invented, THE F STUDENTS ARE THE INVENTORS!!!)
 const lowResCanvas = document.createElement("canvas");
 const lowResCtx = lowResCanvas.getContext("2d");
+
+var value = 0
 
 function resize() {
   canvas.width = window.innerWidth;
@@ -72,7 +74,7 @@ function noise3D(x, y, z) {
 // fractial brownian motion with domain warping inspired by Inigo Quilez (totally not stolen equations) https://iquilezles.org/articles/warp/
 // 
 function fbm(x, y, z, octaves = 1) { 
-  let value = -1; // default value, setting it to -1 or 1 will make it go to the first or last color on the color pallette more
+  // disabled value = 0; // default value, setting it to -1 or 1 will make it go to the first or last color on the color pallette more
   let amplitude = 0.6; // controlss the amplitude (no shit)
   let frequency = 0.6; // controls the frequency of the noise (NO MAMMES??!?!)
 
@@ -155,6 +157,7 @@ function render() {
   ctx.drawImage(lowResCanvas, 0, 0, canvas.width, canvas.height);
 
   time += 0.005; // adds the time the more the faster
+  value = Math.sin(time)
   requestAnimationFrame(render);
 }
 
