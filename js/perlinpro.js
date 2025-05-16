@@ -101,9 +101,7 @@ const palette = [
   [0, 0, 0],      
   [244, 50, 50], 
   [0, 0, 0],  
-  [204, 25, 25],  
-  [0, 0, 0],
-  [244, 50, 50],
+  [244, 50, 50],  
   [0, 0, 0],
 ];
 
@@ -158,7 +156,7 @@ function render() {
   ctx.drawImage(lowResCanvas, 0, 0, canvas.width, canvas.height);
 
   time += 0.02; // adds the time the more the faster
-  value2 = Math.sin(time/4);
+  value2 = Math.sin(time/4); // interpolate between -1 and 1 added to the value to make it change troughout all the colors in the table.
   requestAnimationFrame(render);
 }
 
