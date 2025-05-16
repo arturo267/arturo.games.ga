@@ -151,7 +151,7 @@ function render() {
   }
   // yipee drawing :D
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  ctx.imageSmoothingEnabled = true; //disabled smoothing and smoothing quality. 
+  ctx.imageSmoothingEnabled = false; //disabled smoothing and smoothing quality. 
   ctx.imageSmoothingQuality = 'high';
   ctx.drawImage(lowResCanvas, 0, 0, canvas.width, canvas.height);
 
