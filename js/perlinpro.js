@@ -6,7 +6,8 @@ const scaleFactor = 13; // controls detail vs performance (do not set to low or 
 const lowResCanvas = document.createElement("canvas");
 const lowResCtx = lowResCanvas.getContext("2d");
 
-var value = 0
+let value = 0;
+let time = 0;
 
 function resize() {
   canvas.width = window.innerWidth;
@@ -113,8 +114,6 @@ function lerpColor(a, b, t) {
   ];
 }
 
-let time = 0;
-
 function render() {
   const w = lowResCanvas.width;
   const h = lowResCanvas.height;
@@ -157,7 +156,7 @@ function render() {
   ctx.drawImage(lowResCanvas, 0, 0, canvas.width, canvas.height);
 
   time += 0.005; // adds the time the more the faster
-  value = Math.sin(time)
+  value = Math.sin(time*10);
   requestAnimationFrame(render);
 }
 
