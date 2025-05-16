@@ -29,16 +29,15 @@
          }
     
         body {
-            color: white;
-            overflow: hidden;
-            height: 100vh;
-            background-image: url('Images/background.png');
-            background-repeat: repeat-x; 
-            background-size: 100vw auto; 
-            font-family: 'Jersey 10', sans-serif; 
-            font-weight: normal;
-            text-shadow: 0.17vw 0.17vw 0.33vw rgb(0, 0, 0), -0.17vw -0.17vw 0.33vw rgb(0, 0, 0), 0.17vw -0.17vw 0.33vw rgb(0, 0, 0), -0.17vw 0.17vw 0.33vw rgb(0, 0, 0);
-            animation: moveBackground 20s linear infinite; 
+        	margin: 0;
+		padding: 0;
+ 		overflow: hidden;
+  		height: 100%;
+  		width: 100%;
+  		background-color: black; /* black background will make blur border blac */
+        	font-family: 'Jersey 10', sans-serif; 
+        	font-weight: normal;
+        	text-shadow: 0.17vw 0.17vw 0.33vw rgb(0, 0, 0), -0.17vw -0.17vw 0.33vw rgb(0, 0, 0), 0.17vw -0.17vw 0.33vw rgb(0, 0, 0), -0.17vw 0.17vw 0.33vw rgb(0, 0, 0);
         }
 
         canvas {
@@ -533,8 +532,8 @@
             <a href="games/RaftWars2-gh-pages/index.html" class="pro-button">Play Raft Wars 2.</a>
         </div>
     </div>
+	<!-- <script src="js/squaremake.js"></script> -->
 	<script src="js/perlinpro.js"></script> 
-   	<script src="js/squaremake.js"></script>
     	<script src="js/mainindex.js"></script>
 </body>
 </html>
