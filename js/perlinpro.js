@@ -75,7 +75,7 @@ function noise3D(x, y, z) {
 // fractial brownian motion with domain warping inspired by Inigo Quilez (totally not stolen equations) https://iquilezles.org/articles/warp/
 // 
 function fbm(x, y, z, octaves = 1) { 
-  let value = 0; // default value, setting it to -1 or 1 will make it go to the first or last color on the color pallette more
+  let value = 0 + value2; // default value, setting it to -1 or 1 will make it go to the first or last color on the color pallette more
   let amplitude = 0.6; // controlss the amplitude (no shit)
   let frequency = 0.6; // controls the frequency of the noise (NO MAMMES??!?!)
 
@@ -156,7 +156,7 @@ function render() {
   ctx.drawImage(lowResCanvas, 0, 0, canvas.width, canvas.height);
 
   time += 0.005; // adds the time the more the faster
-  //value = Math.sin(time*10);
+  value2 = Math.sin(time*10);
   requestAnimationFrame(render);
 }
 
