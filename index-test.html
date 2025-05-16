@@ -41,6 +41,15 @@
             animation: moveBackground 20s linear infinite; 
         }
 
+        canvas {
+  	        display: block;
+  	        width: 100%;
+  	        height: 100%;
+	        image-rendering: pixelated;
+  	        /* filter: blur(7px); disabled to make background pixelated for asthetic */
+	        background-color: black;
+        }
+
         @keyframes moveBackground {
             0% {
                 background-position: 0 0; 
@@ -298,6 +307,8 @@
     <link rel="icon" type="image/x-icon" href="Images/cglogo.png">
 </head>
 <body>
+    <canvas id="mycanvas"></canvas>
+    <script src="js/perlinpro.js"></script> <!--get the script-->
     <h1>Cool games!</h1>
     <h2>Mas videojuegos profesionales?!?!</h2>
 
