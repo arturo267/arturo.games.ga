@@ -156,7 +156,7 @@ function render() {
   ctx.drawImage(lowResCanvas, 0, 0, canvas.width, canvas.height);
 
   time += 0.005; // adds the time the more the faster
-  value = Math.sin(time*10);
+  //value = Math.sin(time*10);
   requestAnimationFrame(render);
 }
 
