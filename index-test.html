@@ -8,65 +8,65 @@
     
     <style>
         h1 {
-            position: relative;
-            text-align: center;
-            font-size: 10vw; 
-            letter-spacing: 0.42vw;
-            text-shadow: 0.33vw 0.33vw 0.67vw black, -0.33vw -0.33vw 0.67vw black, 0.33vw -0.33vw 0.67vw black, -0.33vw 0.33vw 0.67vw black; 
-            animation-name: rotateTitle;
-            animation-duration: 5s;
-            animation-iteration-count: infinite;
-            animation-timing-function: ease-in-out;
-            color: white;
-            z-index: 3;
+            	position: fixed;
+		top: 10%;
+		left: 27.5%;
+            	text-align: center;
+            	font-size: 10vw; 
+            	letter-spacing: 0.42vw;
+            	text-shadow: 0.33vw 0.33vw 0.67vw black, -0.33vw -0.33vw 0.67vw black, 0.33vw -0.33vw 0.67vw black, -0.33vw 0.33vw 0.67vw black; 
+            	animation-name: rotateTitle;
+            	animation-duration: 5s;
+            	animation-iteration-count: infinite;
+            	animation-timing-function: ease-in-out;
+            	color: white;
+            	z-index: 3;
         }
     
         h2 {
+            position: fixed;
             color: white;
-            position: relative;
+            top: 22%;
+	    left: 27.5%;
             text-align: center;
             font-size: 4vw;
-            margin-top: -10vw; 
             z-index: 4;
          }
     
         body {
         	margin: 0;
-		    padding: 0;
- 		    overflow: hidden;
-  		    height: 100%;
-  		    width: 100%;
-  		    background-color: black; /* black background will make blur border blac */
+		padding: 0;
+ 		overflow: hidden;
+  		height: 100%;
+  		width: 100%;
+  		background-color: black; /* black background will make blur border blac */
         	font-family: 'Jersey 10', sans-serif; 
         	font-weight: normal;
         	text-shadow: 0.17vw 0.17vw 0.33vw rgb(0, 0, 0), -0.17vw -0.17vw 0.33vw rgb(0, 0, 0), 0.17vw -0.17vw 0.33vw rgb(0, 0, 0), -0.17vw 0.17vw 0.33vw rgb(0, 0, 0);
         }
 
         canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            pointer-events: none;
+            	position: fixed;
+            	top: 0;
+            	left: 0;
+            	pointer-events: none;
   	        display: block;
   	        width: 100%;
   	        height: 100%;
 	        image-rendering: pixelated;
-  	        /* filter: blur(7px); disabled to make background pixelated for asthetic */
 	        background-color: black;
-		    z-index: 1;
+		z-index: 1;
         }
         
         .sidebar {
-            position: fixed;
-            top: 0;
-            left: 0;
-  	        display: block;
-  	        width: 19.5%;
-  	        height: 100%;
-  	        /* filter: blur(7px); disabled to make background pixelated for asthetic */
-	        background-color: rgba(0, 0, 0, 0.5);
-		    z-index: 1;
-
+            	position: fixed;
+            	top: 0;
+            	left: 0;
+  		        display: block;
+  	          width: 19.5%;
+  	          height: 100%;
+	            background-color: rgba(0, 0, 0, 0.5);
+		          z-index: 1;
         }
 
         .bordersidebar {
