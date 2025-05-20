@@ -2,7 +2,7 @@
 const canvas = document.getElementById("mycanvas");
 const ctx = canvas.getContext("2d");
 
-const scaleFactor = 13; // controls detail vs performance (do not set to low or chormebook will get invented, THE F STUDENTS ARE THE INVENTORS!!!)
+const scaleFactor = 15; // controls detail vs performance (do not set to low or chormebook will get invented, THE F STUDENTS ARE THE INVENTORS!!!)
 const lowResCanvas = document.createElement("canvas");
 const lowResCtx = lowResCanvas.getContext("2d");
 
@@ -155,8 +155,8 @@ function render() {
   ctx.imageSmoothingQuality = 'high';
   ctx.drawImage(lowResCanvas, 0, 0, canvas.width, canvas.height);
 
-  time += 0.02; // adds the time the more the faster
-  value2 = Math.sin(time/4); // interpolate between -1 and 1 added to the value to make it change troughout all the colors in the table.
+  time += 0.005; // adds the time the more the faster
+  value2 = Math.sin(time); // interpolate between -1 and 1 added to the value to make it change troughout all the colors in the table.
   requestAnimationFrame(render);
 }
 

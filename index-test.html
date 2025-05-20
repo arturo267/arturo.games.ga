@@ -17,37 +17,80 @@
             animation-duration: 5s;
             animation-iteration-count: infinite;
             animation-timing-function: ease-in-out;
-            z-index: 2;
+            color: white;
+            z-index: 3;
         }
     
         h2 {
+            color: white;
             position: relative;
             text-align: center;
             font-size: 4vw;
             margin-top: -10vw; 
-            z-index: 3;
+            z-index: 4;
          }
     
         body {
         	margin: 0;
-		padding: 0;
- 		overflow: hidden;
-  		height: 100%;
-  		width: 100%;
-  		background-color: black; /* black background will make blur border blac */
+		    padding: 0;
+ 		    overflow: hidden;
+  		    height: 100%;
+  		    width: 100%;
+  		    background-color: black; /* black background will make blur border blac */
         	font-family: 'Jersey 10', sans-serif; 
         	font-weight: normal;
         	text-shadow: 0.17vw 0.17vw 0.33vw rgb(0, 0, 0), -0.17vw -0.17vw 0.33vw rgb(0, 0, 0), 0.17vw -0.17vw 0.33vw rgb(0, 0, 0), -0.17vw 0.17vw 0.33vw rgb(0, 0, 0);
         }
 
         canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
   	        display: block;
   	        width: 100%;
   	        height: 100%;
 	        image-rendering: pixelated;
   	        /* filter: blur(7px); disabled to make background pixelated for asthetic */
 	        background-color: black;
-		z-index: 1;
+		    z-index: 1;
+        }
+        
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+  	        display: block;
+  	        width: 19.5%;
+  	        height: 100%;
+  	        /* filter: blur(7px); disabled to make background pixelated for asthetic */
+	        background-color: rgba(0, 0, 0, 0.5);
+		    z-index: 1;
+
+        }
+
+        .bordersidebar {
+           position: fixed;
+            top: 0;
+            left: 20%;
+  	        display: block;
+  	        width: 1%;
+  	        height: 100%;
+  	        /* filter: blur(7px); disabled to make background pixelated for asthetic */
+	        background-color: rgba(0, 0, 0, 1);
+		    z-index: 1;
+        }
+
+        .bordersidebar2 {
+           position: fixed;
+            top: 0;
+            left: 19.5%;
+  	        display: block;
+  	        width: 0.5%;
+  	        height: 100%;
+  	        /* filter: blur(7px); disabled to make background pixelated for asthetic */
+	        background-color: rgba(0, 0, 0, 0.733);
+		    z-index: 1;
         }
 
         @keyframes moveBackground {
@@ -87,7 +130,7 @@
             justify-content: center;
             padding: 0;
             margin: 10px 0;
-            z-index: 3;
+            z-index: 4;
         }
     
         .pro-button {
@@ -108,17 +151,17 @@
             border: 0.5vw solid #ffffff; 
             width: 33.33vw;  
             height: 4.17vh; 
-            z-index: 2;
+            z-index: 3;
         }
     
         .pro-button:hover {
-            background-color: #000000;
+            background-color: #6d6d6d;
             transform: scale(1.05);
             font-size: 2.67vw; 
         }
     
         .pro-button:active {
-            background-color: #000000;
+            background-color: #ffffff;
             transform: scale(1.15);
             font-size: 3.33vw; 
         }
@@ -128,17 +171,17 @@
                 width: 35vw;
                 height: 45vh;
                 overflow-y: scroll; /* Enable scrolling, but will hide the scrollbar visually */
-                margin: 0.5vw auto;
-                padding: 0.5vw;
+                top: 50%;
+                left: 32%;
                 border: 0.02vw solid #ffffff;
                 border-radius: 0.1vw;
                 background-color: rgba(0, 0, 0, 0.7); /* Transparent background */
-                display: flex;
+                position: fixed;
                 flex-direction: column;
-                gap: 0;
+                gap: 2;
                 border-radius: 0vw;
                 border: 0.5vw solid #ffffff; 
-                z-index: 2;
+                z-index: 3;
             }
 
             .scroll-box::-webkit-scrollbar {
@@ -150,7 +193,7 @@
             height: 10vw;
             background-color: #ffffff;
             position: absolute;
-            z-index: 0;
+            z-index: 1;
             bottom: -10vw; /* Start from below the screen */
             opacity: 0.5;
             animation: popUp 3s linear forwards;
@@ -192,7 +235,7 @@
             height: 6.17vh; /* Match .search-bar */
             font-family: 'Jersey 10', sans-serif; 
             font-weight: normal;
-            z-index: 4;
+            z-index: 5;
             transition: background-color 0.3s ease, color 0.3s ease;
         }
 
@@ -207,7 +250,7 @@
             height: 3vh;
             font-family: 'Jersey 10', sans-serif;
             font-weight: normal;
-            z-index: 4;
+            z-index: 5;
             padding: 0;
             margin: 0;
             display: inline-flex;
@@ -241,7 +284,7 @@
             font-size: 1.5vw;
             height: auto;
             overflow-y: hidden; /* Prevent the scrollbar from appearing */
-            z-index: 10;
+            z-index: 11;
         }
 
         /* Change color of dropdown links on hover */
@@ -283,7 +326,7 @@
             font-family: 'Jersey 10', sans-serif; 
             font-weight: normal;
             text-shadow: 0.17vw 0.17vw 0.33vw rgb(0, 0, 0), -0.17vw -0.17vw 0.33vw rgb(0, 0, 0), 0.17vw -0.17vw 0.33vw rgb(0, 0, 0), -0.17vw 0.17vw 0.33vw rgb(0, 0, 0);
-            z-index: 2;
+            z-index: 3;
         }
 
         .search-bar-container {
@@ -292,7 +335,7 @@
             align-items: center; /* ensures both bars are on the same Y level */
             gap: 1vw; /* spacing between bars */
             margin: 10px; /* optional */
-            z-index: 4;
+            z-index: 5;
         }   
 
         input[type="text"].search-bar:focus {
@@ -308,7 +351,10 @@
 </head>
 <body>
  <canvas id="mycanvas"></canvas>
- <div> 
+ <div>
+    <div class="sidebar"></div> 
+    <div class="bordersidebar"></div> 
+    <div class="bordersidebar2"></div> 
     <h1>Cool games!</h1>
     <h2>Mas videojuegos profesionales?!?!</h2>
 
