@@ -103,18 +103,13 @@
             margin-left: auto;
             margin-right: auto;
             display: block;
-            background-image: url("https://raw.githubusercontent.com/arturo267/arturo267.github.io/refs/heads/main/Images/gear.png");
+            background-image: url("https://raw.githubusercontent.com/arturo267/arturo267.github.io/refs/heads/main/Images/gearmodel3.png");
             opacity: 0.5;
             background-repeat: no-repeat;
             background-size: contain;
             height: 10vw;
             width: 10vw;
-            transition: opacity 0.3s ease, transform 0.3s ease;
-            animation-name: spin;
-            animation-duration: 3s;
-            animation-iteration-count: infinite;
-            animation-timing-function: linear;
-            animation-play-state: paused;
+            transition: opacity 0.3s ease, transform 1s ease;
         }
         
         .homebutton {
@@ -130,8 +125,21 @@
             width: 10vw;
             transition: opacity 0.3s ease, transform 0.3s ease;
         }
-
-
+        
+        .infobutton {
+            margin-top: 2vw;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            background-image: url("https://raw.githubusercontent.com/arturo267/arturo267.github.io/refs/heads/main/Images/New%20Project.png");
+            opacity: 0.5;
+            background-repeat: no-repeat;
+            background-size: contain;
+            height: 10vw;
+            width: 10vw;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        
         .homebutton:hover {
              opacity: 0.7;
              transform: scale(1.1);
@@ -142,13 +150,24 @@
              transform: scale(1.3);
         }
         
+        .infobutton:hover {
+             opacity: 0.7;
+             transform: scale(1.1);
+        }
+
+        .infobutton:active{
+              opacity: 1;
+             transform: scale(1.3);
+        }
+        
         .settingsbutton:hover {
             opacity: 0.7;
-            transform: scale(1.3) rotate(180deg);
+            transform: scale(1.1) rotate(180deg);
         }
 
         .settingsbutton:active{
               opacity: 1;
+              transition: opacity 0.3s ease, transform 0.3s ease;
               transform: scale(1.3) rotate(180deg);
         }
 
@@ -448,7 +467,7 @@
     <div class="sidebar">
         <div class="homebutton"></div>
         <div class="settingsbutton"></div>
-        <div class="homebutton"></div>
+        <div class="infobutton"></div>
     </div> 
     <div class="bordersidebar"></div> 
     <div class="bordersidebar2"></div> 
