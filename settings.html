@@ -3,10 +3,203 @@
   <head>
     <title>Settings</title>
     <style>
-      
+      body {
+        	margin: 0;
+		padding: 0;
+ 		overflow: hidden;
+  		height: 100%;
+  		width: 100%;
+  		background-color: black; /* black background will make blur border blac */
+        	font-family: 'Jersey 10', sans-serif; 
+        	font-weight: normal;
+        	text-shadow: 0.17vw 0.17vw 0.33vw rgb(0, 0, 0), -0.17vw -0.17vw 0.33vw rgb(0, 0, 0), 0.17vw -0.17vw 0.33vw rgb(0, 0, 0), -0.17vw 0.17vw 0.33vw rgb(0, 0, 0);
+        }
+
+        canvas {
+            	position: fixed;
+            	top: 0;
+            	left: 0;
+            	pointer-events: none;
+  	        display: block;
+  	        width: 100%;
+  	        height: 100%;
+	        image-rendering: pixelated;
+	        background-color: rgba(200,0,0,1);
+		z-index: 1;
+        }
+        
+        .sidebar {
+            	position: fixed;
+            	top: 0;
+            	left: 0;
+  		        display: block;
+  	          width: 15%;
+  	          height: 100%;
+	            background-color: rgba(0, 0, 0, 0.5);
+		          z-index: 1;
+        }
+
+        .bordersidebar {
+           position: fixed;
+            top: 0;
+            left: 15.5%;
+  	        display: block;
+  	        width: 1%;
+  	        height: 100%;
+  	        /* filter: blur(7px); disabled to make background pixelated for asthetic */
+	        background-color: rgba(0, 0, 0, 1);
+		    z-index: 1;
+        }
+
+        .bordersidebar2 {
+           position: fixed;
+            top: 0;
+            left: 15%;
+  	        display: block;
+  	        width: 0.5%;
+  	        height: 100%;
+  	        /* filter: blur(7px); disabled to make background pixelated for asthetic */
+	        background-color: rgba(0, 0, 0, 0.733);
+		    z-index: 1;
+        }
+        
+        
+        .settingsbutton {
+            margin-top: 2vw;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            background-image: url("https://raw.githubusercontent.com/arturo267/arturo267.github.io/refs/heads/main/Images/gearmodel3.png");
+            opacity: 0.5;
+            background-repeat: no-repeat;
+            background-size: contain;
+            height: 9vw;
+            width: 9vw;
+            border: none;
+            outline: none;
+            background-color: rgba(0,0,0,0);
+            transition: opacity 0.3s ease, transform 1s ease;
+        }
+        
+        .homebutton {
+            margin-top: 2vw;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            background-image: url("https://raw.githubusercontent.com/arturo267/arturo267.github.io/refs/heads/main/Images/controller.png");
+            opacity: 0.5;
+            background-repeat: no-repeat;
+            background-size: contain;
+            height: 9vw;
+            width: 9vw;
+            border: none;
+            outline: none;
+            background-color: rgba(0,0,0,0);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        
+        .proxybutton {
+            margin-top: 2vw;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            background-image: url("https://raw.githubusercontent.com/arturo267/arturo267.github.io/refs/heads/main/Images/globepixel.png");
+            opacity: 0.5;
+            background-repeat: no-repeat;
+            background-size: contain;
+            height: 9vw;
+            width: 9vw;
+            border: none;
+            outline: none;
+            background-color: rgba(0,0,0,0);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        
+        .infobutton {
+            margin-top: 2vw;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            background-image: url("https://raw.githubusercontent.com/arturo267/arturo267.github.io/refs/heads/main/Images/New%20Project.png");
+            opacity: 0.5;
+            background-repeat: no-repeat;
+            background-size: contain;
+            height: 9vw;
+            width: 9vw;
+            border: none;
+            outline: none;
+            background-color: rgba(0,0,0,0);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        
+        .homebutton:hover {
+             opacity: 0.7;
+             transform: scale(1.1);
+        }
+
+        .homebutton:active{
+              opacity: 1;
+             transform: scale(1.3);
+        }
+        
+        .infobutton:hover {
+             opacity: 0.7;
+             transform: scale(1.1);
+        }
+
+        .infobutton:active{
+              opacity: 1;
+             transform: scale(1.3);
+        }
+        
+        .proxybutton:hover {
+             opacity: 0.7;
+             transform: scale(1.1);
+        }
+
+        .proxybutton:active{
+              opacity: 1;
+             transform: scale(1.3);
+        }
+        
+        .settingsbutton:hover {
+            opacity: 0.7;
+            transform: scale(1.1) rotate(180deg);
+        }
+
+        .settingsbutton:active{
+              opacity: 1;
+              transition: opacity 0.3s ease, transform 0.3s ease;
+              transform: scale(1.3) rotate(180deg);
+        }
     </style>
   </head>
   <body>
-      <h1 class="title">Settings coming soon!</h1>
+    <canvas id="mycanvas"></canvas>
+    <div>
+        <div class="sidebar">
+            <button id="gamesButtonID" class="homebutton"></button>
+            <button id="proxyButtonID" class="proxybutton"></button>
+            <button id="settingsButtonID" class="settingsbutton"></button>
+            <button id="infoButtonID" class="infobutton"></button>
+        </div> 
+      <div class="bordersidebar"></div> 
+      <div class="bordersidebar2"></div> 
+    </div>
+    <script src="js/perlinpro.js"></script>  
+    <script>
+      document.getElementById("gamesButtonID").onclick = function () {
+        location.href = "index.html";
+    };
+    document.getElementById("proxyButtonID").onclick = function () {
+        location.href = "web.html";
+    };
+    document.getElementById("settingsButtonID").onclick = function () {
+        location.href = "settings.html";
+    };
+    document.getElementById("infoButtonID").onclick = function () {
+        location.href = "info.html";
+    };
+    </script>
   </body>
 </html>
