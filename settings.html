@@ -348,26 +348,26 @@ z-index: 1;
           <h2>Colors</h2>
           <div class="rgbsquareGrid">
             <h3>Background color 1</h3>
-            <div class="divh5"></div>
-            <input type="range" min="1" max="100" value="0" class="sliderbarBG" id="BGR1">
-            <input type="range" min="1" max="100" value="0" class="sliderbarBG" id="BGG1">
-            <input type="range" min="1" max="100" value="0" class="sliderbarBG" id="BGB1">
+            <div id="colorBG1" class="divh5"></div>
+            <input type="range" min="0" max="255" value="0" class="sliderbarBG" id="BGR1">
+            <input type="range" min="0" max="255" value="0" class="sliderbarBG" id="BGG1">
+            <input type="range" min="0" max="255" value="0" class="sliderbarBG" id="BGB1">
           </div>
           
           <div class="rgbsquareGrid">
             <h3>Background color 2</h3>
-            <div class="divh5"></div>
-            <input type="range" min="1" max="100" value="0" class="sliderbarBG" id="BGR1">
-            <input type="range" min="1" max="100" value="0" class="sliderbarBG" id="BGG1">
-            <input type="range" min="1" max="100" value="0" class="sliderbarBG" id="BGB1">
+            <div class="divh5" id="colorBG2"></div>
+            <input type="range" min="0" max="255" value="0" class="sliderbarBG" id="BGR2">
+            <input type="range" min="0" max="255" value="0" class="sliderbarBG" id="BGG2">
+            <input type="range" min="0" max="255" value="0" class="sliderbarBG" id="BGB2">
           </div>
           
           <div class="rgbsquareGrid">
             <h3>Background color 3</h3>
-            <div class="divh5"></div>
-            <input type="range" min="1" max="100" value="0" class="sliderbarBG" id="BGR1">
-            <input type="range" min="1" max="100" value="0" class="sliderbarBG" id="BGG1">
-            <input type="range" min="1" max="100" value="0" class="sliderbarBG" id="BGB1">
+            <div class="divh5" id="colorBG3"></div>
+            <input type="range" min="0" max="255" value="0" class="sliderbarBG" id="BGR3">
+            <input type="range" min="0" max="255" value="0" class="sliderbarBG" id="BGG3">
+            <input type="range" min="0" max="255" value="0" class="sliderbarBG" id="BGB3">
           </div>
         </div>
         <div class="smallerslidercon">
@@ -390,18 +390,96 @@ z-index: 1;
    
     <script src="js/perlinpro.js"></script>  
     <script>
+      var sliderBGR1 = document.getElementById("BGR1");
+      var sliderBGG1 = document.getElementById("BGG1");
+      var sliderBGB1 = document.getElementById("BGB1");
+      var output1 = document.getElementById("colorBG1");
+      
+      var sliderBGR2 = document.getElementById("BGR2");
+      var sliderBGG2 = document.getElementById("BGG2");
+      var sliderBGB2 = document.getElementById("BGB2");
+      var output2 = document.getElementById("colorBG2");
+      
+      var sliderBGR3 = document.getElementById("BGR3");
+      var sliderBGG3 = document.getElementById("BGG3");
+      var sliderBGB3 = document.getElementById("BGB3");
+      var output3 = document.getElementById("colorBG3");
+      
+      var R1 = 0;
+      var G1 = 0;
+      var B1 = 0;
+      
+      var R2 = 0;
+      var G2 = 0;
+      var B2 = 0;
+      
+      var R3 = 0;
+      var G3 = 0;
+      var B3 = 0;
+      
+      // First RGB
+      
+      sliderBGR1.oninput = function() {
+        R1 = this.value;
+        output1.style.backgroundColor = "rgba("+R1+","+G1+","+B1+",1)";
+      }
+      
+      sliderBGG1.oninput = function() {
+        G1 = this.value;
+        output1.style.backgroundColor = "rgba("+R1+","+G1+","+B1+",1)";
+      }
+      
+      sliderBGB1.oninput = function() {
+        B1 = this.value;
+        output1.style.backgroundColor = "rgba("+R1+","+G1+","+B1+",1)";
+      }
+      
+      // Second RGB
+      
+      sliderBGR2.oninput = function() {
+        R2 = this.value;
+        output2.style.backgroundColor = "rgba("+R2+","+G2+","+B2+",1)";
+      }
+      
+      sliderBGG2.oninput = function() {
+        G2 = this.value;
+        output2.style.backgroundColor = "rgba("+R2+","+G2+","+B2+",1)";
+      }
+      
+      sliderBGB2.oninput = function() {
+        B2 = this.value;
+        output2.style.backgroundColor = "rgba("+R2+","+G2+","+B2+",1)";
+      }
+      
+      // Third RGB 
+      
+      sliderBGR3.oninput = function() {
+        R3 = this.value;
+        output3.style.backgroundColor = "rgba("+R3+","+G3+","+B3+",1)";
+      }
+      
+      sliderBGG3.oninput = function() {
+        G3 = this.value;
+        output3.style.backgroundColor = "rgba("+R3+","+G3+","+B3+",1)";
+      }
+      
+      sliderBGB3.oninput = function() {
+        B3 = this.value;
+        output3.style.backgroundColor = "rgba("+R3+","+G3+","+B3+",1)";
+      }
+      
       document.getElementById("gamesButtonID").onclick = function () {
-        location.href = "index.html";
-    };
-    document.getElementById("proxyButtonID").onclick = function () {
-        location.href = "web.html";
-    };
-    document.getElementById("settingsButtonID").onclick = function () {
-        location.href = "settings.html";
-    };
-    document.getElementById("infoButtonID").onclick = function () {
-        location.href = "info.html";
-    };
+          location.href = "index.html";
+      };
+      document.getElementById("proxyButtonID").onclick = function () {
+          location.href = "web.html";
+      };
+      document.getElementById("settingsButtonID").onclick = function () {
+          location.href = "settings.html";
+      };
+      document.getElementById("infoButtonID").onclick = function () {
+          location.href = "info.html";
+      };
     </script>
  
 </body></html>
