@@ -405,32 +405,35 @@ z-index: 1;
       var sliderBGB3 = document.getElementById("BGB3");
       var output3 = document.getElementById("colorBG3");
       
-      var R1 = 0;
-      var G1 = 0;
-      var B1 = 0;
+      var R1 = localStorage.getItem("R1");
+      var G1 = localStorage.getItem("G1");
+      var B1 = localStorage.getItem("B1");
       
-      var R2 = 0;
-      var G2 = 0;
-      var B2 = 0;
+      var R2 = localStorage.getItem("R2");
+      var G2 = localStorage.getItem("G2");
+      var B2 = localStorage.getItem("B2");
       
-      var R3 = 0;
-      var G3 = 0;
-      var B3 = 0;
+      var R3 = localStorage.getItem("R3");
+      var G3 = localStorage.getItem("G3");
+      var B3 = localStorage.getItem("B3");
       
       // First RGB
       
       sliderBGR1.oninput = function() {
         R1 = this.value;
+        localStorage.setItem('R1', this.value;);
         output1.style.backgroundColor = "rgba("+R1+","+G1+","+B1+",1)";
       }
       
       sliderBGG1.oninput = function() {
         G1 = this.value;
+        localStorage.setItem('G1', this.value;);
         output1.style.backgroundColor = "rgba("+R1+","+G1+","+B1+",1)";
       }
       
       sliderBGB1.oninput = function() {
         B1 = this.value;
+        localStorage.setItem('B1', this.value;);
         output1.style.backgroundColor = "rgba("+R1+","+G1+","+B1+",1)";
       }
       
