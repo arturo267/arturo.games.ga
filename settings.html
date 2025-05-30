@@ -1,69 +1,159 @@
-<!DOCTYPE html>
-<html>
-  <head>
+<html><head>
+     <!-- this is the font for the website, the code is grabbed from google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+10&amp;display=swap" rel="stylesheet">  
     <title>Settings</title>
     <style>
       body {
-        	margin: 0;
-		padding: 0;
- 		overflow: hidden;
-  		height: 100%;
-  		width: 100%;
-  		background-color: black; /* black background will make blur border blac */
-        	font-family: 'Jersey 10', sans-serif; 
-        	font-weight: normal;
-        	text-shadow: 0.17vw 0.17vw 0.33vw rgb(0, 0, 0), -0.17vw -0.17vw 0.33vw rgb(0, 0, 0), 0.17vw -0.17vw 0.33vw rgb(0, 0, 0), -0.17vw 0.17vw 0.33vw rgb(0, 0, 0);
+        margin: 0;
+     padding: 0;
+       overflow: hidden;
+     height: 100%;
+     width: 100%;
+     background-color: black; /* black background will make blur border blac */
+        font-family: 'Jersey 10', sans-serif;
+        font-weight: none;
+        text-shadow: 0.33vw 0.33vw 0.3vw black, -0.33vw 0.33vw 0.3vw black, -0.33vw -0.33vw 0.3vw black, 0.33vw -0.33vw 0.3vw black;
+       
+        }
+       
+         h1 {
+            position: fixed;
+            text-align: center;
+            font-size: 6vw;
+            color: white;
+            top: -1%;
+            left: 47.5%;
+            letter-spacing: 0.42vw;
+            animation-name: rotateTitle;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+            z-index: 2;
+        }
+       
+        h2 {
+            position: relative;
+            text-align: center;
+            font-size: 4vw;
+            color: white;
+            margin-top: -3.3vw;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: -1.1vw;
+            letter-spacing: 0.2vw;
+            z-index: 2;
+        }
+       
+         h3 {
+            position: relative;
+            text-align: center;
+            font-size: 2.3vw;
+            color: white;
+            margin-top: 0vw;
+            margin-bottom: 1.5vw;
+            margin-left: auto;
+            margin-right: auto;
+            letter-spacing: 0.1vw;
+            z-index: 1;
+            background-color: rgba(0,0,0,0.3);
+            outline: 1vw solid rgba(0,0,0,0.5);
+        }
+        
+        h4 {
+            position: relative;
+            text-align: center;
+            font-size: 2.3vw;
+            color: white;
+            margin-top: 1vw;
+            margin-bottom: 1.5vw;
+            margin-left: auto;
+            margin-right: auto;
+            letter-spacing: 0.1vw;
+            z-index: 1;
+            background-color: rgba(0,0,0,0.3);
+            outline: 1vw solid rgba(0,0,0,0.5);
+        }
+        
+        h5 {
+            position: relative;
+            text-align: center;
+            font-size: 0.2vw;
+            color: white;
+            margin-top: 1vw;
+            margin-bottom: 1.5vw;
+            margin-left: auto;
+            margin-right: auto;
+            letter-spacing: 0.02vw;
+            z-index: 1;
+            background-color: rgba(0,0,0,0);
+            outline: 1vw solid rgba(0,0,0,0);
+        }
+       
+        @keyframes rotateTitle {
+             0% {
+                transform: rotate(-5deg);
+            }
+
+            50% {
+                transform: rotate(5deg);
+            }
+           
+            100% {
+                transform: rotate(-5deg);
+            }
         }
 
         canvas {
-            	position: fixed;
-            	top: 0;
-            	left: 0;
-            	pointer-events: none;
-  	        display: block;
-  	        width: 100%;
-  	        height: 100%;
-	        image-rendering: pixelated;
-	        background-color: rgba(200,0,0,1);
-		z-index: 1;
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+         display: block;
+         width: 100%;
+         height: 100%;
+       image-rendering: pixelated;
+       background-color: rgba(200,0,0,1);
+z-index: 1;
         }
-        
+       
         .sidebar {
-            	position: fixed;
-            	top: 0;
-            	left: 0;
-  		        display: block;
-  	          width: 15%;
-  	          height: 100%;
-	            background-color: rgba(0, 0, 0, 0.5);
-		          z-index: 1;
+            position: fixed;
+            top: 0;
+            left: 0;
+         display: block;
+           width: 15%;
+           height: 100%;
+           background-color: rgba(0, 0, 0, 0.5);
+         z-index: 1;
         }
 
         .bordersidebar {
            position: fixed;
             top: 0;
             left: 15.5%;
-  	        display: block;
-  	        width: 1%;
-  	        height: 100%;
-  	        /* filter: blur(7px); disabled to make background pixelated for asthetic */
-	        background-color: rgba(0, 0, 0, 1);
-		    z-index: 1;
+         display: block;
+         width: 1%;
+         height: 100%;
+         /* filter: blur(7px); disabled to make background pixelated for asthetic */
+       background-color: rgba(0, 0, 0, 1);
+   z-index: 1;
         }
 
         .bordersidebar2 {
            position: fixed;
             top: 0;
             left: 15%;
-  	        display: block;
-  	        width: 0.5%;
-  	        height: 100%;
-  	        /* filter: blur(7px); disabled to make background pixelated for asthetic */
-	        background-color: rgba(0, 0, 0, 0.733);
-		    z-index: 1;
+         display: block;
+         width: 0.5%;
+         height: 100%;
+         /* filter: blur(7px); disabled to make background pixelated for asthetic */
+       background-color: rgba(0, 0, 0, 0.733);
+   z-index: 1;
         }
-        
-        
+       
+       
         .settingsbutton {
             margin-top: 2vw;
             margin-left: auto;
@@ -80,7 +170,7 @@
             background-color: rgba(0,0,0,0);
             transition: opacity 0.3s ease, transform 1s ease;
         }
-        
+       
         .homebutton {
             margin-top: 2vw;
             margin-left: auto;
@@ -97,7 +187,7 @@
             background-color: rgba(0,0,0,0);
             transition: opacity 0.3s ease, transform 0.3s ease;
         }
-        
+       
         .proxybutton {
             margin-top: 2vw;
             margin-left: auto;
@@ -114,7 +204,7 @@
             background-color: rgba(0,0,0,0);
             transition: opacity 0.3s ease, transform 0.3s ease;
         }
-        
+       
         .infobutton {
             margin-top: 2vw;
             margin-left: auto;
@@ -131,7 +221,7 @@
             background-color: rgba(0,0,0,0);
             transition: opacity 0.3s ease, transform 0.3s ease;
         }
-        
+       
         .homebutton:hover {
              opacity: 0.7;
              transform: scale(1.1);
@@ -141,7 +231,7 @@
               opacity: 1;
              transform: scale(1.3);
         }
-        
+       
         .infobutton:hover {
              opacity: 0.7;
              transform: scale(1.1);
@@ -151,7 +241,7 @@
               opacity: 1;
              transform: scale(1.3);
         }
-        
+       
         .proxybutton:hover {
              opacity: 0.7;
              transform: scale(1.1);
@@ -161,7 +251,7 @@
               opacity: 1;
              transform: scale(1.3);
         }
-        
+       
         .settingsbutton:hover {
             opacity: 0.7;
             transform: scale(1.1) rotate(180deg);
@@ -172,20 +262,132 @@
               transition: opacity 0.3s ease, transform 0.3s ease;
               transform: scale(1.3) rotate(180deg);
         }
+       
+        .slidercon {
+          position: fixed;
+            top: 25%;
+            left: 25%;
+         display: block;
+         width: 65%;
+         height: 65%;
+       background-color: rgba(0, 0, 0, 0);
+   z-index: 1;
+        }
+       
+        .smallerslidercon {
+          float: left;
+          margin-left: 1.6666%;
+          margin-right: 1.6666%;
+          position: relative;
+          width: 30%;
+       height: 100%;
+       outline:1vw solid black;
+       background-color: rgba(0, 0, 0, 0.2);
+        }
+        
+        .sliderbarBG {
+          -webkit-appearance: none;
+          width: 50%;
+          margin-bottom: 3.5%;
+          margin-left: 3%;
+          height: 10%;
+          background: rgba(0,0,0,0.5);
+          outline: solid black;
+          -webkit-transition: .2s;
+          transition: opacity .2s;
+        }
+       
+        .sliderbarBG::-webkit-slider-thumb {
+          -webkit-appearance: none;
+          appearance: none;
+          width: 10%;
+          height: 100%;
+          z-index: 2;
+          background: #ffffff;
+          outline: solid black;
+          cursor: pointer;
+        }
+       
+        .sliderbarBG::-moz-range-thumb {
+          width: 25px;
+          height: 25px;
+          background: #04AA6D;
+          cursor: pointer;
+          margin-top: 0vw;
+        } 
+        
+        .sliderbarBG:hover {
+          opacity: 1;
+        }
+        
+        .rgbsquareGrid {
+          position: relative;
+          width: 100%;
+          height: 30%;
+          margin-top: 1vw;
+          background-color: rgba(0,0,0,0.3);
+        }
+        
+        .divh5 {
+          position: absolute;
+          background-color: rgba(255,255,255,1);
+          outline: 0.5vw solid black;
+          height: 45%;
+          width: 7vw;
+          top: 4.2vw;
+          left: 11.5vw;
+        }
     </style>
   </head>
   <body>
     <canvas id="mycanvas"></canvas>
     <div>
+      <h1>Settings</h1>
+      <div class="slidercon">
+        <div class="smallerslidercon">
+          <h2>Colors</h2>
+          <div class="rgbsquareGrid">
+            <h3>Background color 1</h3>
+            <div class="divh5"></div>
+            <input type="range" min="1" max="100" value="0" class="sliderbarBG" id="BGR1">
+            <input type="range" min="1" max="100" value="0" class="sliderbarBG" id="BGG1">
+            <input type="range" min="1" max="100" value="0" class="sliderbarBG" id="BGB1">
+          </div>
+          
+          <div class="rgbsquareGrid">
+            <h3>Background color 2</h3>
+            <div class="divh5"></div>
+            <input type="range" min="1" max="100" value="0" class="sliderbarBG" id="BGR1">
+            <input type="range" min="1" max="100" value="0" class="sliderbarBG" id="BGG1">
+            <input type="range" min="1" max="100" value="0" class="sliderbarBG" id="BGB1">
+          </div>
+          
+          <div class="rgbsquareGrid">
+            <h3>Background color 3</h3>
+            <div class="divh5"></div>
+            <input type="range" min="1" max="100" value="0" class="sliderbarBG" id="BGR1">
+            <input type="range" min="1" max="100" value="0" class="sliderbarBG" id="BGG1">
+            <input type="range" min="1" max="100" value="0" class="sliderbarBG" id="BGB1">
+          </div>
+        </div>
+        <div class="smallerslidercon">
+          <h2>Style</h2>
+          <h3>Background style</h3>
+        </div>
+        <div class="smallerslidercon">
+          <h2>Preferences</h2>
+          <h3>Game settings</h3>
+        </div>
+     
         <div class="sidebar">
             <button id="gamesButtonID" class="homebutton"></button>
             <button id="proxyButtonID" class="proxybutton"></button>
             <button id="settingsButtonID" class="settingsbutton"></button>
             <button id="infoButtonID" class="infobutton"></button>
-        </div> 
-      <div class="bordersidebar"></div> 
-      <div class="bordersidebar2"></div> 
-    </div>
+        </div>
+      <div class="bordersidebar"></div>
+      <div class="bordersidebar2"></div>
+   
     <script src="js/perlinpro.js"></script>  
     <script>
       document.getElementById("gamesButtonID").onclick = function () {
@@ -201,5 +403,6 @@
         location.href = "info.html";
     };
     </script>
-  </body>
-</html>
+ 
+</body></html>
+
