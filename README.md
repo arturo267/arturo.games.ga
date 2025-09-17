@@ -6,6 +6,6 @@ More things will be added in the future.
 <h2>
   --Other uploaded domains links:
 </h2>
-arturo267-github-io.vercel.app/index.html
-curious-paletas-85dbca.netlify.app
+arturo267-github-io.vercel.app/index.html <br>
+curious-paletas-85dbca.netlify.app <br>
 arturo267.github.io
