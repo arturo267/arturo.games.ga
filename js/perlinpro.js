@@ -123,11 +123,11 @@ const palette3 = [
 ];
 
 const palette = [
-  [R3 ?? 0, G3 ?? 0, B3 ?? 0],
-  [R1 ?? 255, G1 ?? 0, B1 ?? 0],
-  [R3 ?? 0, G3 ?? 0, B3 ?? 0],
-  [R2 ?? 230, G2 ?? 230, B2 ?? 50],
-  [R3 ?? 0, G3 ?? 0, B3 ?? 0],
+  [getColor("R3", 0), getColor("G3", 0), getColor("B3", 0)],
+  [getColor("R1", 230), getColor("G1", 50), getColor("B1", 50)],
+  [getColor("R3", 0), getColor("G3", 0), getColor("B3", 0)],
+  [getColor("R2", 230), getColor("G2", 50), getColor("B2", 50)],
+  [getColor("R3", 0), getColor("G3", 0), getColor("B3", 0)],
 ];
 
 // basic linear interpolation for pro
@@ -139,7 +139,16 @@ function lerpColor(a, b, t) {
   ];
 }
 
+function getPalette() {
+  return [R3 ?? 0, G3 ?? 0, B3 ?? 0],
+  [R1 ?? 255, G1 ?? 0, B1 ?? 0],
+  [R3 ?? 0, G3 ?? 0, B3 ?? 0],
+  [R2 ?? 230, G2 ?? 230, B2 ?? 50],
+  [R3 ?? 0, G3 ?? 0, B3 ?? 0];
+}
+
 function render() {
+  const paletteNew = getPallete();
   const w = lowResCanvas.width;
   const h = lowResCanvas.height;
 
@@ -161,13 +170,13 @@ function render() {
       f = (f + 1) * 0.5;
 
       // pick corresponding colors from the "f" value
-      const segments = palette.length - 1;
+      const segments = paletteNew.length - 1;
       const scaledF = f * segments;
       const index = Math.floor(scaledF);
       const t = scaledF - index;
 
-      const c1 = palette[index] || palette[palette.length - 1];
-      const c2 = palette[Math.min(index + 1, palette.length - 1)] || c1;
+      const c1 = paletteNew[index] || paletteNew[paletteNew.length - 1];
+      const c2 = paletteNew[Math.min(index + 1, paletteNew.length - 1)] || c1;
       const [r, g, b] = lerpColor(c1, c2, t);
 
       lowResCtx.fillStyle = `rgb(${Math.floor(r)}, ${Math.floor(g)}, ${Math.floor(b)})`;
