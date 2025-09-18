@@ -140,11 +140,13 @@ function lerpColor(a, b, t) {
 }
 
 function getPalette() {
-  return [R3 ?? 0, G3 ?? 0, B3 ?? 0],
-  [R1 ?? 255, G1 ?? 0, B1 ?? 0],
-  [R3 ?? 0, G3 ?? 0, B3 ?? 0],
-  [R2 ?? 230, G2 ?? 230, B2 ?? 50],
-  [R3 ?? 0, G3 ?? 0, B3 ?? 0];
+  return [
+    [getColor("R3", 0),   getColor("G3", 0),   getColor("B3", 0)],
+    [getColor("R1", 255), getColor("G1", 0),   getColor("B1", 0)],
+    [getColor("R3", 0),   getColor("G3", 0),   getColor("B3", 0)],
+    [getColor("R2", 230), getColor("G2", 230), getColor("B2", 50)],
+    [getColor("R3", 0),   getColor("G3", 0),   getColor("B3", 0)],
+  ];
 }
 
 function render() {
