@@ -7,11 +7,11 @@
     <style>
       body {
         margin: 0;
-     padding: 0;
-       overflow: hidden;
-     height: 100%;
-     width: 100%;
-     background-color: black; /* black background will make blur border blac */
+        padding: 0;
+        overflow: hidden;
+        height: 100%;
+        width: 100%;
+        background-color: black; /* black background will make blur border blac */
         font-family: 'Jersey 10', sans-serif;
         font-weight: none;
         text-shadow: 0.33vw 0.33vw 0.3vw black, -0.33vw 0.33vw 0.3vw black, -0.33vw -0.33vw 0.3vw black, 0.33vw -0.33vw 0.3vw black;
@@ -90,6 +90,17 @@
             background-color: rgba(0,0,0,0);
             outline: 1vw solid rgba(0,0,0,0);
         }
+
+         h6 {
+            position: absolute;
+            margin-left: 60%;
+            margin-top: 5%;
+            font-size: 450%;
+            color: white;
+            background-color: rgba(0, 0, 0, 0);
+            height: 5%;
+         }
+
        
         @keyframes rotateTitle {
              0% {
@@ -265,13 +276,13 @@ z-index: 1;
        
         .slidercon {
           position: fixed;
-            top: 25%;
-            left: 25%;
-         display: block;
-         width: 65%;
-         height: 65%;
-       background-color: rgba(0, 0, 0, 0);
-   z-index: 1;
+          top: 25%;
+          left: 25%;
+          display: block;
+          width: 65%;
+          height: 65%;
+          background-color: rgba(0, 0, 0, 0);
+          z-index: 1;
         }
        
         .smallerslidercon {
@@ -280,9 +291,9 @@ z-index: 1;
           margin-right: 1.6666%;
           position: relative;
           width: 30%;
-       height: 100%;
-       outline:1vw solid black;
-       background-color: rgba(0, 0, 0, 0.2);
+          height: 100%;
+          outline:1vw solid black;
+          background-color: rgba(0, 0, 0, 0.2);
         }
         
         .sliderbarBG {
@@ -323,11 +334,11 @@ z-index: 1;
         .rgbsquareGrid {
           position: relative;
           width: 100%;
-          height: 30%;
-          margin-top: 1vw;
+          height: 33%;
+          margin-top: 2%;
           background-color: rgba(0,0,0,0.3);
         }
-        
+
         .divh5 {
           position: absolute;
           background-color: rgba(255,255,255,1);
@@ -336,6 +347,64 @@ z-index: 1;
           width: 7vw;
           top: 4.2vw;
           left: 11.5vw;
+        }
+
+        /* The switch - the box around the slider */
+        .switch {
+          position: relative;
+          display: inline-block;
+          width: 40%;
+          left: 7.5%;
+          top: 15%;
+          height: 22.5%;
+        }
+
+        /* Hide default HTML checkbox */
+        .switch input {
+          opacity: 0;
+          width: 0;
+          height: 0;
+        }
+
+        /* The slider */
+        .slider {
+          position: absolute;
+          cursor: pointer;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          outline: 0.25vw solid black;
+          background-color: #750000;
+          -webkit-transition: .4s;
+          transition: .4s;
+        }
+
+        .slider:before {
+          position: absolute;
+          content: "";
+          height: 120%;
+          width: 40%;
+          left: 0;
+          bottom: -10%;
+          outline: 0.25vw solid black;
+          background-color: rgb(255, 255, 255);
+         -webkit-transition: .4s;
+         transition: .4s;
+        }
+
+        input:checked + .slider {
+         background-color: #1eff00;
+        }
+
+        input:focus + .slider {
+          box-shadow: 0 0 1px #000000;
+        }
+
+        input:checked + .slider:before {
+          -webkit-transform: translateX(150%);
+          -ms-transform: translateX(150%);
+         transform: translateX(150%);
         }
     </style>
   </head>
@@ -372,7 +441,14 @@ z-index: 1;
         </div>
         <div class="smallerslidercon">
           <h2>Style</h2>
-          <h3>Background style</h3>
+          <div class="rgbsquareGrid">
+            <h3>Smooth background</h3>
+            <h6 id = "smoothTextChecker">OFF</h6>
+            <label class="switch">
+            <input type="checkbox" id = "SmoothBGCheck" onclick = "togleSmooth()">
+            <span class="slider"></span>
+            </label>
+          </div>
         </div>
         <div class="smallerslidercon">
           <h2>Preferences</h2>
@@ -390,7 +466,8 @@ z-index: 1;
    
     <script src="js/perlinpro.js"></script>  
     <script>
-      // Reference the HTML code
+
+      // reference the HTML code
       
       var sliderBGR1 = document.getElementById("BGR1");
       var sliderBGG1 = document.getElementById("BGG1");
@@ -406,8 +483,11 @@ z-index: 1;
       var sliderBGG3 = document.getElementById("BGG3");
       var sliderBGB3 = document.getElementById("BGB3");
       var output3 = document.getElementById("colorBG3");
+
+      var smoothChecker = document.getElementById("SmoothBGCheck");
+      var smoothTextChecker = document.getElementById("smoothTextChecker");
       
-      //Local storage get colors
+      //local storage get colors
       
       var R1 = localStorage.getItem("R1");
       var G1 = localStorage.getItem("G1");
@@ -421,13 +501,13 @@ z-index: 1;
       var G3 = localStorage.getItem("G3");
       var B3 = localStorage.getItem("B3");
       
-      // Set BG colors
+      // set BG colors
       
       output1.style.backgroundColor = "rgba("+R1+","+G1+","+B1+",1)";
       output2.style.backgroundColor = "rgba("+R2+","+G2+","+B2+",1)";
       output3.style.backgroundColor = "rgba("+R3+","+G3+","+B3+",1)";
       
-      // Set slider values
+      // set slider values
       
       sliderBGR1.value = R1;
       sliderBGG1.value = G1;
@@ -441,7 +521,27 @@ z-index: 1;
       sliderBGG3.value = G3;
       sliderBGB3.value = B3;
       
-      // First RGB
+      // first RGB
+
+      function togleSmooth() {
+        // if the checkbox is checked, display the output text
+        if (smoothChecker.checked == true){
+          smoothTextChecker.textContent = "ON";
+          localStorage.setItem("SmoothBG", "true")
+        } else {
+          localStorage.setItem("SmoothBG", "false")
+          smoothTextChecker.textContent = "OFF";
+        }
+      };
+
+      let bool = localStorage.getItem("SmoothBG")
+      if (bool === "true") {
+        smoothChecker.checked = true
+        smoothTextChecker.textContent = "ON";
+      } else {
+         smoothChecker.checked = false
+        smoothTextChecker.textContent = "OFF";
+      };
       
       sliderBGR1.oninput = function() {
         R1 = this.value;

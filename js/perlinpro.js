@@ -19,7 +19,7 @@ var R3 = getColor("R3", 0);
 var G3 = getColor("G3", 0);
 var B3 = getColor("B3", 0);
 
-const scaleFactor = 15; // controls detail vs performance (do not set to low or your computer will suffer.)
+const scaleFactor = 20; // controls detail vs performance (do not set to low or your computer will suffer.)
 const lowResCanvas = document.createElement("canvas");
 const lowResCtx = lowResCanvas.getContext("2d");
 
@@ -154,12 +154,19 @@ function render() {
   const w = lowResCanvas.width;
   const h = lowResCanvas.height;
 
+   let bool = localStorage.getItem("SmoothBG")
+  if (bool === "true") {
+    ctx.imageSmoothingEnabled = true; //smoothing enabled. 
+  } else {
+    ctx.imageSmoothingEnabled = false; //disabled smoothing
+  };
+
   for (let y = 0; y < h; y++) {
     for (let x = 0; x < w; x++) {
       const px = x / w * 3;
       const py = y / h * 3;
 
-      // DOMAIN EXPANSION (domain warping)
+      // (domain warping)
       const qx = fbm(px + 0.0, py + 0.0, time);
       const qy = fbm(px + 5.2, py + 1.3, time);
 
@@ -187,7 +194,6 @@ function render() {
   }
   // yipee drawing :D
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  ctx.imageSmoothingEnabled = false; //disabled smoothing and smoothing quality. 
   ctx.imageSmoothingQuality = 'high';
   ctx.drawImage(lowResCanvas, 0, 0, canvas.width, canvas.height);
 
