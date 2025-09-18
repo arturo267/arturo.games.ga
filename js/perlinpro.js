@@ -2,6 +2,18 @@
 const canvas = document.getElementById("mycanvas");
 const ctx = canvas.getContext("2d");
 
+var R1 = localStorage.getItem("R1");
+var G1 = localStorage.getItem("G1");
+var B1 = localStorage.getItem("B1");
+      
+var R2 = localStorage.getItem("R2");
+var G2 = localStorage.getItem("G2");
+var B2 = localStorage.getItem("B2");
+      
+var R3 = localStorage.getItem("R3");
+var G3 = localStorage.getItem("G3");
+var B3 = localStorage.getItem("B3");
+
 const scaleFactor = 15; // controls detail vs performance (do not set to low or chormebook will get invented, THE F STUDENTS ARE THE INVENTORS!!!)
 const lowResCanvas = document.createElement("canvas");
 const lowResCtx = lowResCanvas.getContext("2d");
@@ -97,12 +109,28 @@ function fbm(x, y, z, octaves = 1) {
 }
 
 // color change to depending height
-const palette = [
+const palette3 = [
   [0, 0, 0],      
   [244, 50, 50], 
   [0, 0, 0],  
   [244, 50, 50],  
   [0, 0, 0],
+];
+
+const palette = [
+  [R3 ?? 0, G3 ?? 0, B3 ?? 0],
+  [R1 ?? 244, G1 ?? 50, B1 ?? 50],
+  [R3 ?? 0, G3 ?? 0, B3 ?? 0],
+  [R2 ?? 244, G2 ?? 50, B2 ?? 50],
+  [R3 ?? 0, G3 ?? 0, B3 ?? 0],
+];
+
+const palette2 = [
+  [R3, G3, B3],      
+  [R1, G1, B1], 
+  [R3, G3, B3],  
+  [R2, G2, B2],  
+  [R3, G3, B3],
 ];
 
 // basic linear interpolation for pro
