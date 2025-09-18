@@ -14,7 +14,7 @@ var R3 = localStorage.getItem("R3");
 var G3 = localStorage.getItem("G3");
 var B3 = localStorage.getItem("B3");
 
-const scaleFactor = 15; // controls detail vs performance (do not set to low or chormebook will get invented, THE F STUDENTS ARE THE INVENTORS!!!)
+const scaleFactor = 15; // controls detail vs performance (do not set to low or your computer will suffer.)
 const lowResCanvas = document.createElement("canvas");
 const lowResCtx = lowResCanvas.getContext("2d");
 
