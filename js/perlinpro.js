@@ -150,7 +150,7 @@ function getPalette() {
 }
 
 function render() {
-  const paletteNew = getPallete();
+  const paletteNew = getPalette();
   const w = lowResCanvas.width;
   const h = lowResCanvas.height;
 
