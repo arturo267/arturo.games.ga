@@ -2,17 +2,17 @@
 const canvas = document.getElementById("mycanvas");
 const ctx = canvas.getContext("2d");
 
-var R1 = localStorage.getItem("R1");
-var G1 = localStorage.getItem("G1");
-var B1 = localStorage.getItem("B1");
+var R1 = +localStorage.getItem("R1");
+var G1 = +localStorage.getItem("G1");
+var B1 = +localStorage.getItem("B1");
       
-var R2 = localStorage.getItem("R2");
-var G2 = localStorage.getItem("G2");
-var B2 = localStorage.getItem("B2");
+var R2 = +localStorage.getItem("R2");
+var G2 = +localStorage.getItem("G2");
+var B2 = +localStorage.getItem("B2");
       
-var R3 = localStorage.getItem("R3");
-var G3 = localStorage.getItem("G3");
-var B3 = localStorage.getItem("B3");
+var R3 = +localStorage.getItem("R3");
+var G3 = +localStorage.getItem("G3");
+var B3 = +localStorage.getItem("B3");
 
 const scaleFactor = 15; // controls detail vs performance (do not set to low or your computer will suffer.)
 const lowResCanvas = document.createElement("canvas");
