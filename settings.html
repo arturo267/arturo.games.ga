@@ -390,6 +390,8 @@ z-index: 1;
    
     <script src="js/perlinpro.js"></script>  
     <script>
+      // Reference the HTML code
+      
       var sliderBGR1 = document.getElementById("BGR1");
       var sliderBGG1 = document.getElementById("BGG1");
       var sliderBGB1 = document.getElementById("BGB1");
@@ -405,6 +407,8 @@ z-index: 1;
       var sliderBGB3 = document.getElementById("BGB3");
       var output3 = document.getElementById("colorBG3");
       
+      //Local storage get colors
+      
       var R1 = localStorage.getItem("R1");
       var G1 = localStorage.getItem("G1");
       var B1 = localStorage.getItem("B1");
@@ -417,63 +421,85 @@ z-index: 1;
       var G3 = localStorage.getItem("G3");
       var B3 = localStorage.getItem("B3");
       
+      // Set BG colors
+      
       output1.style.backgroundColor = "rgba("+R1+","+G1+","+B1+",1)";
       output2.style.backgroundColor = "rgba("+R2+","+G2+","+B2+",1)";
       output3.style.backgroundColor = "rgba("+R3+","+G3+","+B3+",1)";
+      
+      // Set slider values
+      
+      sliderBGR1.value = R1;
+      sliderBGG1.value = G1;
+      sliderBGB1.value = B1;
+      
+      sliderBGR2.value = R2;
+      sliderBGG2.value = G2;
+      sliderBGB2.value = B2;
+      
+      sliderBGR3.value = R3;
+      sliderBGG3.value = G3;
+      sliderBGB3.value = B3;
       
       // First RGB
       
       sliderBGR1.oninput = function() {
         R1 = this.value;
-        localStorage.setItem('R1', this.value;);
+        localStorage.setItem('R1', this.value);
         output1.style.backgroundColor = "rgba("+R1+","+G1+","+B1+",1)";
-      }
+      };
       
       sliderBGG1.oninput = function() {
         G1 = this.value;
-        localStorage.setItem('G1', this.value;);
+        localStorage.setItem('G1', this.value);
         output1.style.backgroundColor = "rgba("+R1+","+G1+","+B1+",1)";
-      }
+      };
       
       sliderBGB1.oninput = function() {
         B1 = this.value;
-        localStorage.setItem('B1', this.value;);
+        localStorage.setItem('B1', this.value);
         output1.style.backgroundColor = "rgba("+R1+","+G1+","+B1+",1)";
-      }
+      };
       
       // Second RGB
       
       sliderBGR2.oninput = function() {
         R2 = this.value;
+        localStorage.setItem('R2', this.value);
         output2.style.backgroundColor = "rgba("+R2+","+G2+","+B2+",1)";
-      }
+      };
       
       sliderBGG2.oninput = function() {
         G2 = this.value;
+        localStorage.setItem('G2', this.value);
         output2.style.backgroundColor = "rgba("+R2+","+G2+","+B2+",1)";
-      }
+      };
       
       sliderBGB2.oninput = function() {
         B2 = this.value;
+        localStorage.setItem('B2', this.value);
         output2.style.backgroundColor = "rgba("+R2+","+G2+","+B2+",1)";
-      }
+      };
       
       // Third RGB 
       
       sliderBGR3.oninput = function() {
         R3 = this.value;
+        localStorage.setItem('R3', this.value);
         output3.style.backgroundColor = "rgba("+R3+","+G3+","+B3+",1)";
-      }
+      };
       
       sliderBGG3.oninput = function() {
         G3 = this.value;
+        localStorage.setItem('G3', this.value);
         output3.style.backgroundColor = "rgba("+R3+","+G3+","+B3+",1)";
-      }
+      };
       
       sliderBGB3.oninput = function() {
         B3 = this.value;
+        localStorage.setItem('B3', this.value);
         output3.style.backgroundColor = "rgba("+R3+","+G3+","+B3+",1)";
-      }
+      };
       
       document.getElementById("gamesButtonID").onclick = function () {
           location.href = "index.html";
@@ -490,4 +516,3 @@ z-index: 1;
     </script>
  
 </body></html>
-
