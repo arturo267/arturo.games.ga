@@ -1,4 +1,4 @@
-// perlin noise inspired by: https://iquilezles.org/articles/warp/ and https://thebookofshaders.com/13/ . made by arturo267 with a little bit of ChatGPT for help. (i suck at math)
+// perlin noise inspired by: https://iquilezles.org/articles/warp/ and https://thebookofshaders.com/13/ . made by arturo267
 const canvas = document.getElementById("mycanvas");
 const ctx = canvas.getContext("2d");
 
@@ -50,7 +50,7 @@ function grad(hash, x, y, z) {
   return ((h & 1) === 0 ? u : -u) + ((h & 2) === 0 ? v : -v);
 }
 
-// noise generation by ChatGPT (i totally know how this works)
+// noise generation
 function noise3D(x, y, z) {
   const X = Math.floor(x) & 255;
   const Y = Math.floor(y) & 255;
