@@ -8,9 +8,6 @@
       body {
         margin: 0;
         padding: 0;
-        overflow: hidden;
-        height: 100%;
-        width: 100%;
         background-color: black; /* black background will make blur border blac */
         font-family: 'Jersey 10', sans-serif;
         font-weight: none;
@@ -91,14 +88,18 @@
             outline: 1vw solid rgba(0,0,0,0);
         }
 
-         h6 {
-            position: absolute;
-            margin-left: 60%;
-            margin-top: 5%;
-            font-size: 450%;
+         p6 {
+           position: absolute;
+            text-align: center;
+            font-size: 5vw;
             color: white;
-            background-color: rgba(0, 0, 0, 0);
-            height: 5%;
+            top: 7.5vh;
+            margin-bottom: 4%;
+            margin-left: 55%;
+            letter-spacing: 0.1vw;
+            z-index: 1;
+            background-color: rgba(0,0,0,0);
+            outline: 1vw solid rgba(0,0,0,0);
          }
 
        
@@ -443,7 +444,7 @@ z-index: 1;
           <h2>Style</h2>
           <div class="rgbsquareGrid">
             <h3>Smooth background</h3>
-            <h6 id = "smoothTextChecker">OFF</h6>
+            <p6 id = "smoothTextChecker">OFF</p6>
             <label class="switch">
             <input type="checkbox" id = "SmoothBGCheck" onclick = "togleSmooth()">
             <span class="slider"></span>
