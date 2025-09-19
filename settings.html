@@ -88,18 +88,25 @@
             outline: 1vw solid rgba(0,0,0,0);
         }
 
-         p6 {
+         .p6 {
            position: absolute;
             text-align: center;
             font-size: 5vw;
-            color: white;
+            color: rgba(230,0,0,1);
             top: 7.5vh;
             margin-bottom: 4%;
-            margin-left: 55%;
+            left: 60%;
             letter-spacing: 0.1vw;
             z-index: 1;
             background-color: rgba(0,0,0,0);
             outline: 1vw solid rgba(0,0,0,0);
+            transition: margin-left 0.4s ease;
+         }
+         
+         .p6.active {
+           left: 62.5%;
+           color: rgba(255,255,255,1);
+           transition: margin-left 0.4s ease;
          }
 
        
@@ -397,11 +404,11 @@ z-index: 1;
         input:checked + .slider {
          background-color: #1eff00;
         }
-
+        
         input:focus + .slider {
           box-shadow: 0 0 1px #000000;
         }
-
+        
         input:checked + .slider:before {
           -webkit-transform: translateX(150%);
           -ms-transform: translateX(150%);
@@ -444,7 +451,7 @@ z-index: 1;
           <h2>Style</h2>
           <div class="rgbsquareGrid">
             <h3>Smooth background</h3>
-            <p6 id = "smoothTextChecker">OFF</p6>
+            <div class = "p6" id = "smoothTextChecker">OFF</div>
             <label class="switch">
             <input type="checkbox" id = "SmoothBGCheck" onclick = "togleSmooth()">
             <span class="slider"></span>
@@ -528,8 +535,10 @@ z-index: 1;
         // if the checkbox is checked, display the output text
         if (smoothChecker.checked == true){
           smoothTextChecker.textContent = "ON";
+          smoothTextChecker.classList.toggle('active');
           localStorage.setItem("SmoothBG", "true")
         } else {
+          smoothTextChecker.classList.toggle('active');
           localStorage.setItem("SmoothBG", "false")
           smoothTextChecker.textContent = "OFF";
         }
@@ -539,6 +548,7 @@ z-index: 1;
       if (bool === "true") {
         smoothChecker.checked = true
         smoothTextChecker.textContent = "ON";
+        smoothTextChecker.classList.toggle('active');
       } else {
          smoothChecker.checked = false
         smoothTextChecker.textContent = "OFF";
