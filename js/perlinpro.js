@@ -19,7 +19,11 @@ var R3 = getColor("R3", 0);
 var G3 = getColor("G3", 0);
 var B3 = getColor("B3", 0);
 
-const scaleFactor = 20; // controls detail vs performance (do not set to low or your computer will suffer.)
+var WaveSize = Number(localStorage.getItem("WaveSize"))
+var WaveSpeed = Number(localStorage.getItem("WaveSpeed"))
+var WaveQuality = Number(localStorage.getItem("WaveQuality"))
+
+var scaleFactor = WaveQuality; // controls detail vs performance (do not set to low or your computer will suffer.)
 const lowResCanvas = document.createElement("canvas");
 const lowResCtx = lowResCanvas.getContext("2d");
 
@@ -30,8 +34,8 @@ function resize() {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 
-  lowResCanvas.width = Math.floor(canvas.width / scaleFactor);
-  lowResCanvas.height = Math.floor(canvas.height / scaleFactor);
+  lowResCanvas.width = Math.floor(canvas.width / Number(localStorage.getItem("WaveQuality")));
+  lowResCanvas.height = Math.floor(canvas.height / Number(localStorage.getItem("WaveQuality")));
 }
 window.addEventListener("resize", resize);
 resize();
