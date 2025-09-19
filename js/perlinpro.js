@@ -34,8 +34,8 @@ function resize() {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 
-  lowResCanvas.width = Math.floor(canvas.width / Number(localStorage.getItem("WaveQuality")));
-  lowResCanvas.height = Math.floor(canvas.height / Number(localStorage.getItem("WaveQuality")));
+  lowResCanvas.width = Math.floor(canvas.width / (15/Number(localStorage.getItem("WaveQuality"))));
+  lowResCanvas.height = Math.floor(canvas.height / (15/Number(localStorage.getItem("WaveQuality"))));
 }
 window.addEventListener("resize", resize);
 resize();
@@ -97,8 +97,8 @@ function noise3D(x, y, z) {
 // 
 function fbm(x, y, z, octaves = 1) { 
   let value = 0 + value2; // default value, setting it to -1 or 1 will make it go to the first or last color on the color pallette more
-  let amplitude = 0.6; // controlss the amplitude (no shit)
-  let frequency = 0.6; // controls the frequency of the noise (NO MAMMES??!?!)
+  let amplitude = 0.6/Number(localStorage.getItem("WaveSize")); // controlss the amplitude (no shit)
+  let frequency = 0.6/Number(localStorage.getItem("WaveSize")); // controls the frequency of the noise (NO MAMMES??!?!)
 
   // reduce axial bias
   const cosA = Math.cos(0.5);
@@ -201,7 +201,7 @@ function render() {
   ctx.imageSmoothingQuality = 'high';
   ctx.drawImage(lowResCanvas, 0, 0, canvas.width, canvas.height);
 
-  time += 0.005; // adds the time the more the faster
+  time += 0.005 * Number(localStorage.getItem("WaveSpeed")); // adds the time the more the faster
   value2 = Math.sin(time); // interpolate between -1 and 1 added to the value to make it change troughout all the colors in the table.
   requestAnimationFrame(render);
 }
