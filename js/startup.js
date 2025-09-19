@@ -17,8 +17,13 @@
         localStorage.setItem("B3", "0");
 
         // set the default for the togle
-        localStorage.setItem("SmoothBG", "false")
+        localStorage.setItem("SmoothBG", "false");
+
+	 	// set wave settings
+	 	localStorage.setItem("WaveSize", 15)
+	 	localStorage.setItem("WaveSpeed", 100)
+	 	localStorage.setItem("WaveQuality", 15)
 
         // togle if first time
-		    localStorage.setItem("NotFirstTime", "true");
+		localStorage.setItem("NotFirstTime", "true");
     };
