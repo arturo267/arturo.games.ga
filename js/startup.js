@@ -21,8 +21,8 @@
 
 	 	// set wave settings
 	 	localStorage.setItem("WaveSize", 15)
-	 	localStorage.setItem("WaveSpeed", 100)
-	 	localStorage.setItem("WaveQuality", 15)
+	 	localStorage.setItem("WaveSpeed", 1)
+	 	localStorage.setItem("WaveQuality", 1)
 
         // togle if first time
 		localStorage.setItem("NotFirstTime", "true");
