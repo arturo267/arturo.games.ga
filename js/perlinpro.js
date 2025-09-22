@@ -19,9 +19,11 @@ var R3 = getColor("R3", 0);
 var G3 = getColor("G3", 0);
 var B3 = getColor("B3", 0);
 
-var WaveSize = Number(localStorage.getItem("WaveSize"))
-var WaveSpeed = Number(localStorage.getItem("WaveSpeed"))
-var WaveQuality = Number(localStorage.getItem("WaveQuality"))
+var WaveSize = Number(localStorage.getItem("WaveSize"));
+var WaveSpeed = Number(localStorage.getItem("WaveSpeed"));
+var WaveQuality = Number(localStorage.getItem("WaveQuality"));
+var SmoothingBool = localStorage.getItem("SmoothBG");
+var changed = false;
 
 var scaleFactor = WaveQuality; // controls detail vs performance (do not set to low or your computer will suffer.)
 const lowResCanvas = document.createElement("canvas");
@@ -30,13 +32,41 @@ const lowResCtx = lowResCanvas.getContext("2d");
 let value2 = 0;
 let time = 0;
 
+// Update events if they change.
+window.addEventListener('storage', (event) => {
+  if (event.key === 'WaveSize') {
+    WaveSize = Number(event.newValue);
+    console.log("WaveSize updated to:", WaveSize);
+  }
+
+  if (event.key === 'WaveSpeed') {
+    WaveSpeed = Number(event.newValue);
+    console.log("WaveSpeed updated to:", WaveSpeed);
+  }
+
+  if (event.key === 'WaveQuality') {
+    WaveQuality = Number(event.newValue);
+    console.log("WaveQuality updated to:", WaveQuality);
+  }
+
+  if (event.key === 'SmoothBG') {
+    SmoothingBool = event.newValue;
+    console.log("SmoothingBool updated to:", SmoothingBool);
+  }
+
+  changed = true;
+});
+
+// resize function
 function resize() {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 
-  lowResCanvas.width = Math.floor(canvas.width / (15/Number(localStorage.getItem("WaveQuality"))));
-  lowResCanvas.height = Math.floor(canvas.height / (15/Number(localStorage.getItem("WaveQuality"))));
+  lowResCanvas.width = Math.floor(canvas.width / WaveQuality));
+  lowResCanvas.height = Math.floor(canvas.height / WaveQuality));
 }
+
+// resize function
 window.addEventListener("resize", resize);
 resize();
 
@@ -93,12 +123,11 @@ function noise3D(x, y, z) {
   return lerp(y1, y2, w);
 }
 
-// fractial brownian motion with domain warping inspired by Inigo Quilez (totally not stolen equations) https://iquilezles.org/articles/warp/
-// 
+// fractial brownian motion with domain warping inspired by Inigo Quilez (totally not stolen equations) https://iquilezles.org/articles/warp/ 
 function fbm(x, y, z, octaves = 1) { 
   let value = 0 + value2; // default value, setting it to -1 or 1 will make it go to the first or last color on the color pallette more
-  let amplitude = 0.6/Number(localStorage.getItem("WaveSize")); // controlss the amplitude (no shit)
-  let frequency = 0.6/Number(localStorage.getItem("WaveSize")); // controls the frequency of the noise (NO MAMMES??!?!)
+  let amplitude = 0.6/WaveSize; // controlss the amplitude (no shit)
+  let frequency = 0.6/WaveSize; // controls the frequency of the noise (NO MAMMES??!?!)
 
   // reduce axial bias
   const cosA = Math.cos(0.5);
@@ -158,7 +187,12 @@ function render() {
   const w = lowResCanvas.width;
   const h = lowResCanvas.height;
 
-   let bool = localStorage.getItem("SmoothBG")
+  if (changed === true) {
+    resize();
+    changed = false;
+  };
+
+   let bool = SmoothingBool;
   if (bool === "true") {
     ctx.imageSmoothingEnabled = true; //smoothing enabled. 
   } else {
@@ -201,7 +235,7 @@ function render() {
   ctx.imageSmoothingQuality = 'high';
   ctx.drawImage(lowResCanvas, 0, 0, canvas.width, canvas.height);
 
-  time += 0.005 * Number(localStorage.getItem("WaveSpeed")); // adds the time the more the faster
+  time += 0.005 * WaveSpeed; // adds the time the more the faster
   value2 = Math.sin(time); // interpolate between -1 and 1 added to the value to make it change troughout all the colors in the table.
   requestAnimationFrame(render);
 }
