@@ -58,6 +58,21 @@
             outline: 1vw solid rgba(0,0,0,0.5);
         }
         
+        .p3 {
+            position: relative;
+            text-align: center;
+            font-size: 2.3vw;
+            color: white;
+            margin-top: 0vw;
+            margin-bottom: 1.5vw;
+            margin-left: auto;
+            margin-right: auto;
+            letter-spacing: 0.1vw;
+            z-index: 1;
+            background-color: rgba(0,0,0,0.3);
+            outline: 1vw solid rgba(0,0,0,0.5);
+        }
+        
         h4 {
             position: relative;
             text-align: center;
@@ -91,10 +106,11 @@
          .p6 {
            position: absolute;
             text-align: center;
-            font-size: 5vw;
+            font-size: 4.5vw;
             color: rgba(230,0,0,1);
-            top: 7.5vh;
-            margin-bottom: 4%;
+            top: 6.75vh;
+            height: 22.5%;
+            bottom: 7.5vh;
             left: 60%;
             letter-spacing: 0.1vw;
             z-index: 1;
@@ -346,6 +362,14 @@ z-index: 1;
           margin-top: 2%;
           background-color: rgba(0,0,0,0.3);
         }
+        
+        .rgbsquareGrid2 {
+          position: relative;
+          width: 100%;
+          height: 24.5%;
+          margin-top: 2%;
+          background-color: rgba(0,0,0,0.3);
+        }
 
         .divh5 {
           position: absolute;
@@ -359,11 +383,11 @@ z-index: 1;
 
         /* The switch - the box around the slider */
         .switch {
-          position: relative;
+          position: absolute;
           display: inline-block;
           width: 40%;
           left: 7.5%;
-          top: 15%;
+          top: 9vh;
           height: 22.5%;
         }
 
@@ -414,6 +438,50 @@ z-index: 1;
           -ms-transform: translateX(150%);
          transform: translateX(150%);
         }
+        
+        /* search container */
+        
+        .search-bar {
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            margin: 10px 0;
+            background-color: rgba(0,0,0,0.5);
+            color: rgb(255, 255, 255);
+            padding: 0;  
+            position: absolute;
+            left: 5%;
+            top: 48%;
+            text-align: center;
+            text-decoration: none;
+            display: flex; 
+            justify-content: center; 
+            align-items: center;
+            font-size: 2.5vw; 
+            margin: 0vw 0vw; 
+            cursor: pointer;
+            border-radius: 0px;
+            border: 0.5vw solid rgba(0,0,0,0.5); 
+            width: 90%;  
+            height: 40%; 
+            font-family: 'Jersey 10', sans-serif; 
+            font-weight: normal;
+            text-shadow: 0.17vw 0.17vw 0.33vw rgba(0, 0, 0, 0.5), -0.17vw -0.17vw 0.33vw rgb(0, 0, 0, 0.5), 0.17vw -0.17vw 0.33vw rgb(0, 0, 0), -0.17vw 0.17vw 0.33vw rgb(0, 0, 0);
+            z-index: 3;
+        }
+
+        .search-bar-container {
+            display: flex;
+            justify-content: flex-start; /* or center or space-between depending on layout */
+            align-items: center; /* ensures both bars are on the same Y level */
+            gap: 1vw; /* spacing between bars */
+            margin: 10px; /* optional */
+            z-index: 5;
+        }   
+
+        input[type="text"].search-bar:focus {
+            outline: none; /* Remove the default outline on focus */
+        }
     </style>
   </head>
   <body>
@@ -449,13 +517,32 @@ z-index: 1;
         </div>
         <div class="smallerslidercon">
           <h2>Style</h2>
-          <div class="rgbsquareGrid">
-            <h3>Smooth background</h3>
+          <div class="rgbsquareGrid2">
+             <div class="p3">Smooth background</div>
             <div class = "p6" id = "smoothTextChecker">OFF</div>
             <label class="switch">
             <input type="checkbox" id = "SmoothBGCheck" onclick = "togleSmooth()">
             <span class="slider"></span>
             </label>
+          </div>
+          <div class="rgbsquareGrid2">
+            <div class="p3">Wave Size</div>
+            <div class="search-bar-container" id="waveTextBoxparent" >
+              <input type="text" id="waveTextBox" class="search-bar" placeholder="Select Size..." onkeyup="SizeChange()">
+            </div>
+            </label>
+          </div>
+          <div class="rgbsquareGrid2">
+             <div class="p3">Wave Speed</div>
+            <div class="search-bar-container" id="waveTextBoxparent" >
+              <input type="text" id="waveSpeedTextBox" class="search-bar" placeholder="Select Size..." onkeyup="SpeedChange()">
+            </div>
+          </div>
+          <div class="rgbsquareGrid2">
+             <div class="p3">Wave Quality</div>
+            <div class="search-bar-container" id="waveTextBoxparent" >
+              <input type="text" id="waveQualityTextBox" class="search-bar" placeholder="Select Size..." onkeyup="QualityChange()">
+            </div>
           </div>
         </div>
         <div class="smallerslidercon">
@@ -491,7 +578,10 @@ z-index: 1;
       var sliderBGG3 = document.getElementById("BGG3");
       var sliderBGB3 = document.getElementById("BGB3");
       var output3 = document.getElementById("colorBG3");
-
+      
+      var wavetextbox = document.getElementById("waveTextBox")
+      var waveSpeedtextbox = document.getElementById("waveSpeedTextBox")
+      var waveQualitytextbox = document.getElementById("waveQualityTextBox")
       var smoothChecker = document.getElementById("SmoothBGCheck");
       var smoothTextChecker = document.getElementById("smoothTextChecker");
       
@@ -509,6 +599,13 @@ z-index: 1;
       var G3 = localStorage.getItem("G3");
       var B3 = localStorage.getItem("B3");
       
+      var WaveSize = localStorage.getItem("WaveSize")
+      var WaveSpeed = localStorage.getItem("WaveSpeed")
+      var WaveQuality = localStorage.getItem("WaveQuality")
+      
+      wavetextbox.placeholder = WaveSize
+      waveSpeedtextbox.placeholder = WaveSpeed
+      waveQualitytextbox.placeholder = WaveQuality
       // set BG colors
       
       output1.style.backgroundColor = "rgba("+R1+","+G1+","+B1+",1)";
@@ -530,6 +627,27 @@ z-index: 1;
       sliderBGB3.value = B3;
       
       // first RGB
+      
+      function SizeChange() {
+        var txt = wavetextbox.value
+        
+        wavetextbox.placeholder = txt
+        localStorage.setItem("WaveSize", txt)
+      }
+      
+      function SpeedChange() {
+        var txt = waveSpeedtextbox.value
+        
+        waveSpeedtextbox.placeholder = txt
+        localStorage.setItem("WaveSpeed", txt)
+      }
+      
+      function QualityChange() {
+        var txt = waveQualitytextbox.value
+        
+        waveQualitytextbox.placeholder = txt
+        localStorage.setItem("WaveQuality", txt)
+      }
 
       function togleSmooth() {
         // if the checkbox is checked, display the output text
