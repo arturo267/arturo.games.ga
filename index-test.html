@@ -1,194 +1,103 @@
-<html><head>
-     <!-- this is the font for the website, the code is grabbed from google fonts-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- this is the font for the website, the code is grabbed from google fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Jersey+10&amp;display=swap" rel="stylesheet">  
-    <title>Settings</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">  
+    
     <style>
-      body {
-        margin: 0;
-        padding: 0;
-        background-color: black; /* black background will make blur border blac */
-        font-family: 'Jersey 10', sans-serif;
-        font-weight: none;
-        text-shadow: 0.33vw 0.33vw 0.3vw black, -0.33vw 0.33vw 0.3vw black, -0.33vw -0.33vw 0.3vw black, 0.33vw -0.33vw 0.3vw black;
-       
+        h1 {
+            	position: fixed;
+		top: 0%;
+		left: 27.5%;
+            	text-align: center;
+            	font-size: 10vw; 
+            	letter-spacing: 0.42vw;
+            	text-shadow: 0.33vw 0.33vw 0.67vw black, -0.33vw -0.33vw 0.67vw black, 0.33vw -0.33vw 0.67vw black, -0.33vw 0.33vw 0.67vw black; 
+            	animation-name: rotateTitle;
+            	animation-duration: 5s;
+            	animation-iteration-count: infinite;
+            	animation-timing-function: ease-in-out;
+            	color: white;
+            	z-index: 3;
         }
-       
-         h1 {
-            position: fixed;
-            text-align: center;
-            font-size: 6vw;
-            color: white;
-            top: -1%;
-            left: 47.5%;
-            letter-spacing: 0.42vw;
-            animation-name: rotateTitle;
-            animation-duration: 5s;
+    
+        h2 {
+            animation-name: pusleh2;
+            animation-duration: 0.8s;
             animation-iteration-count: infinite;
             animation-timing-function: ease-in-out;
-            z-index: 2;
-        }
-       
-        h2 {
-            position: relative;
+            position: fixed;
+            color: white;
+            top: 25%;
+	    left: 26.5%;
             text-align: center;
             font-size: 4vw;
-            color: white;
-            margin-top: -3.3vw;
-            margin-left: auto;
-            margin-right: auto;
-            margin-bottom: -1.1vw;
-            letter-spacing: 0.2vw;
-            z-index: 2;
-        }
-       
-         h3 {
-            position: relative;
-            text-align: center;
-            font-size: 2.3vw;
-            color: white;
-            margin-top: 0vw;
-            margin-bottom: 1.5vw;
-            margin-left: auto;
-            margin-right: auto;
-            letter-spacing: 0.1vw;
-            z-index: 1;
-            background-color: rgba(0,0,0,0.3);
-            outline: 1vw solid rgba(0,0,0,0.5);
-        }
-        
-        .p3 {
-            position: relative;
-            text-align: center;
-            font-size: 2.3vw;
-            color: white;
-            margin-top: 0vw;
-            margin-bottom: 1.5vw;
-            margin-left: auto;
-            margin-right: auto;
-            letter-spacing: 0.1vw;
-            z-index: 1;
-            background-color: rgba(0,0,0,0.3);
-            outline: 1vw solid rgba(0,0,0,0.5);
-        }
-        
-        h4 {
-            position: relative;
-            text-align: center;
-            font-size: 2.3vw;
-            color: white;
-            margin-top: 1vw;
-            margin-bottom: 1.5vw;
-            margin-left: auto;
-            margin-right: auto;
-            letter-spacing: 0.1vw;
-            z-index: 1;
-            background-color: rgba(0,0,0,0.3);
-            outline: 1vw solid rgba(0,0,0,0.5);
-        }
-        
-        h5 {
-            position: relative;
-            text-align: center;
-            font-size: 0.2vw;
-            color: white;
-            margin-top: 1vw;
-            margin-bottom: 1.5vw;
-            margin-left: auto;
-            margin-right: auto;
-            letter-spacing: 0.02vw;
-            z-index: 1;
-            background-color: rgba(0,0,0,0);
-            outline: 1vw solid rgba(0,0,0,0);
-        }
-
-         .p6 {
-           position: absolute;
-            text-align: center;
-            font-size: 4.5vw;
-            color: rgba(230,0,0,1);
-            top: 6.75vh;
-            height: 22.5%;
-            bottom: 7.5vh;
-            left: 60%;
-            letter-spacing: 0.1vw;
-            z-index: 1;
-            background-color: rgba(0,0,0,0);
-            outline: 1vw solid rgba(0,0,0,0);
-            transition: margin-left 0.4s ease;
+            z-index: 4;
          }
-         
-         .p6.active {
-           left: 62.5%;
-           color: rgba(255,255,255,1);
-           transition: margin-left 0.4s ease;
-         }
-
-       
-        @keyframes rotateTitle {
-             0% {
-                transform: rotate(-5deg);
-            }
-
-            50% {
-                transform: rotate(5deg);
-            }
-           
-            100% {
-                transform: rotate(-5deg);
-            }
+    
+        body {
+        	margin: 0;
+		padding: 0;
+ 		overflow: hidden;
+  		height: 100%;
+  		width: 100%;
+  		background-color: black; /* black background will make blur border blac */
+        	font-family: 'Jersey 10', sans-serif; 
+        	font-weight: normal;
+        	text-shadow: 0.17vw 0.17vw 0.33vw rgb(0, 0, 0), -0.17vw -0.17vw 0.33vw rgb(0, 0, 0), 0.17vw -0.17vw 0.33vw rgb(0, 0, 0), -0.17vw 0.17vw 0.33vw rgb(0, 0, 0);
         }
 
         canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            pointer-events: none;
-         display: block;
-         width: 100%;
-         height: 100%;
-       image-rendering: pixelated;
-       background-color: rgba(200,0,0,1);
-z-index: 1;
+            	position: fixed;
+            	top: 0;
+            	left: 0;
+            	pointer-events: none;
+  	        display: block;
+  	        width: 100%;
+  	        height: 100%;
+	        image-rendering: pixelated;
+	        background-color: rgba(200,0,0,1);
+		z-index: 1;
         }
-       
+        
         .sidebar {
-            position: fixed;
-            top: 0;
-            left: 0;
-         display: block;
-           width: 15%;
-           height: 100%;
-           background-color: rgba(0, 0, 0, 0.5);
-         z-index: 1;
+            	position: fixed;
+            	top: 0;
+            	left: 0;
+  		        display: block;
+  	          width: 15%;
+  	          height: 100%;
+	            background-color: rgba(0, 0, 0, 0.5);
+		          z-index: 1;
         }
 
         .bordersidebar {
            position: fixed;
             top: 0;
             left: 15.5%;
-         display: block;
-         width: 1%;
-         height: 100%;
-         /* filter: blur(7px); disabled to make background pixelated for asthetic */
-       background-color: rgba(0, 0, 0, 1);
-   z-index: 1;
+  	        display: block;
+  	        width: 1%;
+  	        height: 100%;
+  	        /* filter: blur(7px); disabled to make background pixelated for asthetic */
+	        background-color: rgba(0, 0, 0, 1);
+		    z-index: 1;
         }
 
         .bordersidebar2 {
            position: fixed;
             top: 0;
             left: 15%;
-         display: block;
-         width: 0.5%;
-         height: 100%;
-         /* filter: blur(7px); disabled to make background pixelated for asthetic */
-       background-color: rgba(0, 0, 0, 0.733);
-   z-index: 1;
+  	        display: block;
+  	        width: 0.5%;
+  	        height: 100%;
+  	        /* filter: blur(7px); disabled to make background pixelated for asthetic */
+	        background-color: rgba(0, 0, 0, 0.733);
+		    z-index: 1;
         }
-       
-       
+        
+        
         .settingsbutton {
             margin-top: 2vw;
             margin-left: auto;
@@ -205,7 +114,7 @@ z-index: 1;
             background-color: rgba(0,0,0,0);
             transition: opacity 0.3s ease, transform 1s ease;
         }
-       
+        
         .homebutton {
             margin-top: 2vw;
             margin-left: auto;
@@ -222,7 +131,7 @@ z-index: 1;
             background-color: rgba(0,0,0,0);
             transition: opacity 0.3s ease, transform 0.3s ease;
         }
-       
+        
         .proxybutton {
             margin-top: 2vw;
             margin-left: auto;
@@ -239,7 +148,7 @@ z-index: 1;
             background-color: rgba(0,0,0,0);
             transition: opacity 0.3s ease, transform 0.3s ease;
         }
-       
+        
         .infobutton {
             margin-top: 2vw;
             margin-left: auto;
@@ -256,7 +165,7 @@ z-index: 1;
             background-color: rgba(0,0,0,0);
             transition: opacity 0.3s ease, transform 0.3s ease;
         }
-       
+        
         .homebutton:hover {
              opacity: 0.7;
              transform: scale(1.1);
@@ -266,7 +175,7 @@ z-index: 1;
               opacity: 1;
              transform: scale(1.3);
         }
-       
+        
         .infobutton:hover {
              opacity: 0.7;
              transform: scale(1.1);
@@ -276,7 +185,7 @@ z-index: 1;
               opacity: 1;
              transform: scale(1.3);
         }
-       
+        
         .proxybutton:hover {
              opacity: 0.7;
              transform: scale(1.1);
@@ -286,7 +195,7 @@ z-index: 1;
               opacity: 1;
              transform: scale(1.3);
         }
-       
+        
         .settingsbutton:hover {
             opacity: 0.7;
             transform: scale(1.1) rotate(180deg);
@@ -297,161 +206,80 @@ z-index: 1;
               transition: opacity 0.3s ease, transform 0.3s ease;
               transform: scale(1.3) rotate(180deg);
         }
-       
-        .slidercon {
-          position: fixed;
-          top: 25%;
-          left: 25%;
-          display: block;
-          width: 65%;
-          height: 65%;
-          background-color: rgba(0, 0, 0, 0);
-          z-index: 1;
-        }
-       
-        .smallerslidercon {
-          float: left;
-          margin-left: 1.6666%;
-          margin-right: 1.6666%;
-          position: relative;
-          width: 30%;
-          height: 100%;
-          outline:1vw solid black;
-          background-color: rgba(0, 0, 0, 0.2);
+
+        @keyframes moveBackground {
+            0% {
+                background-position: 0 0; 
+            }
+            100% {
+                background-position: 100vw 0; 
+            }
         }
         
-        .sliderbarBG {
-          -webkit-appearance: none;
-          width: 50%;
-          margin-bottom: 3.5%;
-          margin-left: 3%;
-          height: 10%;
-          background: rgba(0,0,0,0.5);
-          outline: solid black;
-          -webkit-transition: .2s;
-          transition: opacity .2s;
-        }
-       
-        .sliderbarBG::-webkit-slider-thumb {
-          -webkit-appearance: none;
-          appearance: none;
-          width: 10%;
-          height: 100%;
-          z-index: 2;
-          background: #ffffff;
-          outline: solid black;
-          cursor: pointer;
-        }
-       
-        .sliderbarBG::-moz-range-thumb {
-          width: 25px;
-          height: 25px;
-          background: #04AA6D;
-          cursor: pointer;
-          margin-top: 0vw;
-        } 
-        
-        .sliderbarBG:hover {
-          opacity: 1;
-        }
-        
-        .rgbsquareGrid {
-          position: relative;
-          width: 100%;
-          height: 33%;
-          margin-top: 2%;
-          background-color: rgba(0,0,0,0.3);
-        }
-        
-        .rgbsquareGrid2 {
-          position: relative;
-          width: 100%;
-          height: 24.5%;
-          margin-top: 2%;
-          background-color: rgba(0,0,0,0.3);
+        @keyframes spin {
+             0% {
+                transform: rotate(0) scale(1);
+            }
+
+            50% {
+                transform: rotate(180deg) scale(1.1);
+            }
+            
+            100% {
+                transform: rotate(360deg) scale(1);
+            }
         }
 
-        .divh5 {
-          position: absolute;
-          background-color: rgba(255,255,255,1);
-          outline: 0.5vw solid black;
-          height: 45%;
-          width: 7vw;
-          top: 4.2vw;
-          left: 11.5vw;
-        }
+        @keyframes rotateTitle {
+             0% {
+                transform: rotate(-5deg);
+            }
 
-        /* The switch - the box around the slider */
-        .switch {
-          position: absolute;
-          display: inline-block;
-          width: 40%;
-          left: 7.5%;
-          top: 9vh;
-          height: 22.5%;
-        }
-
-        /* Hide default HTML checkbox */
-        .switch input {
-          opacity: 0;
-          width: 0;
-          height: 0;
-        }
-
-        /* The slider */
-        .slider {
-          position: absolute;
-          cursor: pointer;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          outline: 0.25vw solid black;
-          background-color: #750000;
-          -webkit-transition: .4s;
-          transition: .4s;
-        }
-
-        .slider:before {
-          position: absolute;
-          content: "";
-          height: 120%;
-          width: 40%;
-          left: 0;
-          bottom: -10%;
-          outline: 0.25vw solid black;
-          background-color: rgb(255, 255, 255);
-         -webkit-transition: .4s;
-         transition: .4s;
-        }
-
-        input:checked + .slider {
-         background-color: #1eff00;
+            50% {
+                transform: rotate(5deg);
+            }
+           
+            100% {
+                transform: rotate(-5deg);
+            }
         }
         
-        input:focus + .slider {
-          box-shadow: 0 0 1px #000000;
+        @keyframes pusleh2 {
+             0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+           
+            100% {
+                transform: scale(1);
+            }
         }
-        
-        input:checked + .slider:before {
-          -webkit-transform: translateX(150%);
-          -ms-transform: translateX(150%);
-         transform: translateX(150%);
+    
+        .button {
+            color: blue;
         }
-        
-        /* search container */
-        
-        .search-bar {
+    
+        .html {
+            background: rgb(33,171,84);
+            background: linear-gradient(90deg, rgba(33,171,84,1) 0%, rgba(0,255,1,1) 53%, rgba(0,174,255,1) 87%);
+        }
+    
+        .top-buttons {
             display: flex;
             justify-content: center;
             padding: 0;
             margin: 10px 0;
-            background-color: rgba(0,0,0,0.5);
+            z-index: 4;
+        }
+    
+        .pro-button {
+            background-color: black;
+            border: none;
             color: rgb(255, 255, 255);
             padding: 0;  
-            position: absolute;
-            left: 5%;
-            top: 48%;
             text-align: center;
             text-decoration: none;
             display: flex; 
@@ -461,12 +289,191 @@ z-index: 1;
             margin: 0vw 0vw; 
             cursor: pointer;
             border-radius: 0px;
-            border: 0.5vw solid rgba(0,0,0,0.5); 
-            width: 90%;  
-            height: 40%; 
+            transition: background-color 1s ease, transform 1s ease, font-size 0.3s ease;
+            border: 0.5vw solid #ffffff; 
+            width: 33.33vw;  
+            height: 4.17vh; 
+            z-index: 3;
+        }
+    
+        .pro-button:hover {
+            background-color: #6d6d6d;
+            transform: scale(1.05);
+            font-size: 2.67vw; 
+        }
+    
+        .pro-button:active {
+            background-color: #ffffff;
+            transform: scale(1.15);
+            font-size: 3.33vw; 
+        }
+
+        /* Scrollbox for games */
+            .scroll-box {
+                width: 35vw;
+                height: 45vh;
+                overflow-y: scroll; /* Enable scrolling, but will hide the scrollbar visually */
+                top: 50%;
+                left: 32%;
+                border: 0.02vw solid #ffffff;
+                border-radius: 0.1vw;
+                background-color: rgba(0, 0, 0, 0.7); /* Transparent background */
+                position: fixed;
+                flex-direction: column;
+                gap: 2;
+                border-radius: 0vw;
+                border: 0.5vw solid #ffffff; 
+                z-index: 3;
+            }
+
+            .scroll-box::-webkit-scrollbar {
+            display: none; /* Hides the scrollbar for webkit browsers (Chrome, Safari, etc.) */
+        }
+            /* Square styles */
+         .square {
+            width: 10vw;
+            height: 10vw;
+            background-color: #ffffff;
+            position: absolute;
+            z-index: 1;
+            bottom: -10vw; /* Start from below the screen */
+            opacity: 0.5;
+            animation: popUp 3s linear forwards;
+        }
+
+        /* Animation keyframes */
+        @keyframes popUp {
+            0% {
+                bottom: -10vw;
+                opacity: 0.5;
+            }
+            50% {
+                bottom: 50%;
+                opacity: 0.5;
+            }
+            100% {
+                bottom: 100%;
+                opacity: 0.25;
+            }
+        }  
+        
+        /* Dropdown Button */
+        .dropbtn { 
+            display: flex;
+            position: fixed;
+            left: 55%;
+            top: 42%;
+            justify-content: center;
+            background-color: black;
+            color: rgba(255, 255, 255, 0.5);
+            padding: 0;  
+            text-align: center;
+            text-decoration: none;
+            display: flex; 
+            justify-content: center; 
+            align-items: center;
+            font-size: 2.5vw; 
+            margin: 0vw 0vw; 
+            cursor: pointer;
+            border: 0.5vw solid #ffffff; 
+            width: 15vw;  
+            height: 6.17vh; /* Match .search-bar */
             font-family: 'Jersey 10', sans-serif; 
             font-weight: normal;
-            text-shadow: 0.17vw 0.17vw 0.33vw rgba(0, 0, 0, 0.5), -0.17vw -0.17vw 0.33vw rgb(0, 0, 0, 0.5), 0.17vw -0.17vw 0.33vw rgb(0, 0, 0), -0.17vw 0.17vw 0.33vw rgb(0, 0, 0);
+            z-index: 5;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .dropchildbtn { 
+            background-color: black;
+            color: rgba(255, 255, 255, 0.5);
+            text-align: center;
+            text-decoration: none;
+            font-size: 1.5vw;
+            cursor: pointer;
+            width: 13.7vw;
+            height: 3vh;
+            font-weight: normal;
+            z-index: 5;
+            padding: 0;
+            margin: 0;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            outline: none;
+            border: none;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            font-family: 'Jersey 10', sans-serif; 
+        }
+
+        /* Test here for dropdown */
+
+        /* The container <div> - needed to position the dropdown content */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Links inside the dropdown */
+        .dropdown-content {
+            text-shadow: none;
+            position: fixed;
+            top: 47.75%;
+            left: 55.2%;
+            display: none;
+            flex-direction: column;
+            background: rgba(0, 0, 0, 1);
+            width: 13.7vw;
+            border: 0.5vw solid rgb(255, 255, 255); 
+            font-size: 1.5vw;
+            height: auto;
+            overflow-y: hidden; /* Prevent the scrollbar from appearing */
+            z-index: 11;
+        }
+
+        /* Change color of dropdown links on hover */
+        .dropchildbtn:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+            color: #ffffff;
+        }
+
+        .dropbtn:hover {
+            background-color: rgb(87, 87, 87);
+            color: #ffffff;
+        }
+
+        /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+        .show {display: flex;}
+
+        /* test end for dropdown */
+
+        .search-bar {
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            margin: 10px 0;
+            background-color: black;
+            color: rgb(255, 255, 255);
+            padding: 0;  
+            position: fixed;
+            left: 30%;
+            top: 42%;
+            text-align: center;
+            text-decoration: none;
+            display: flex; 
+            justify-content: center; 
+            align-items: center;
+            font-size: 2.5vw; 
+            margin: 0vw 0vw; 
+            cursor: pointer;
+            border-radius: 0px;
+            border: 0.5vw solid #ffffff; 
+            width: 22vw;  
+            height: 4.17vh; 
+            font-family: 'Jersey 10', sans-serif; 
+            font-weight: normal;
+            text-shadow: 0.17vw 0.17vw 0.33vw rgb(0, 0, 0), -0.17vw -0.17vw 0.33vw rgb(0, 0, 0), 0.17vw -0.17vw 0.33vw rgb(0, 0, 0), -0.17vw 0.17vw 0.33vw rgb(0, 0, 0);
             z-index: 3;
         }
 
@@ -483,273 +490,266 @@ z-index: 1;
             outline: none; /* Remove the default outline on focus */
         }
     </style>
-  </head>
-  <body>
-    <canvas id="mycanvas"></canvas>
-    <div>
-      <h1>Settings</h1>
-      <div class="slidercon">
-        <div class="smallerslidercon">
-          <h2>Colors</h2>
-          <div class="rgbsquareGrid">
-            <h3>Background color 1</h3>
-            <div id="colorBG1" class="divh5"></div>
-            <input type="range" min="0" max="255" value="0" class="sliderbarBG" id="BGR1">
-            <input type="range" min="0" max="255" value="0" class="sliderbarBG" id="BGG1">
-            <input type="range" min="0" max="255" value="0" class="sliderbarBG" id="BGB1">
-          </div>
-          
-          <div class="rgbsquareGrid">
-            <h3>Background color 2</h3>
-            <div class="divh5" id="colorBG2"></div>
-            <input type="range" min="0" max="255" value="0" class="sliderbarBG" id="BGR2">
-            <input type="range" min="0" max="255" value="0" class="sliderbarBG" id="BGG2">
-            <input type="range" min="0" max="255" value="0" class="sliderbarBG" id="BGB2">
-          </div>
-          
-          <div class="rgbsquareGrid">
-            <h3>Interpolation color</h3>
-            <div class="divh5" id="colorBG3"></div>
-            <input type="range" min="0" max="255" value="0" class="sliderbarBG" id="BGR3">
-            <input type="range" min="0" max="255" value="0" class="sliderbarBG" id="BGG3">
-            <input type="range" min="0" max="255" value="0" class="sliderbarBG" id="BGB3">
-          </div>
-        </div>
-        <div class="smallerslidercon">
-          <h2>Style</h2>
-          <div class="rgbsquareGrid2">
-             <div class="p3">Smooth background</div>
-            <div class = "p6" id = "smoothTextChecker">OFF</div>
-            <label class="switch">
-            <input type="checkbox" id = "SmoothBGCheck" onclick = "togleSmooth()">
-            <span class="slider"></span>
-            </label>
-          </div>
-          <div class="rgbsquareGrid2">
-            <div class="p3">Wave Size</div>
-            <div class="search-bar-container" id="waveTextBoxparent" >
-              <input type="text" id="waveTextBox" class="search-bar" placeholder="Select Size..." onkeyup="SizeChange()">
-            </div>
-            </label>
-          </div>
-          <div class="rgbsquareGrid2">
-             <div class="p3">Wave Speed</div>
-            <div class="search-bar-container" id="waveTextBoxparent" >
-              <input type="text" id="waveSpeedTextBox" class="search-bar" placeholder="Select Size..." onkeyup="SpeedChange()">
-            </div>
-          </div>
-          <div class="rgbsquareGrid2">
-             <div class="p3">Wave Quality</div>
-            <div class="search-bar-container" id="waveTextBoxparent" >
-              <input type="text" id="waveQualityTextBox" class="search-bar" placeholder="Select Size..." onkeyup="QualityChange()">
-            </div>
-          </div>
-        </div>
-        <div class="smallerslidercon">
-          <h2>Preferences</h2>
-          <h3>Game settings</h3>
-        </div>
-     
-        <div class="sidebar">
-            <button id="gamesButtonID" class="homebutton"></button>
-            <button id="proxyButtonID" class="proxybutton"></button>
-            <button id="settingsButtonID" class="settingsbutton"></button>
-            <button id="infoButtonID" class="infobutton"></button>
-        </div>
-      <div class="bordersidebar"></div>
-      <div class="bordersidebar2"></div>
-   <script src ="js/startup.js"></script>
-    <script src="js/perlinpro.js"></script>  
-    <script>
+    
 
-      // reference the HTML code
-      
-      var sliderBGR1 = document.getElementById("BGR1");
-      var sliderBGG1 = document.getElementById("BGG1");
-      var sliderBGB1 = document.getElementById("BGB1");
-      var output1 = document.getElementById("colorBG1");
-      
-      var sliderBGR2 = document.getElementById("BGR2");
-      var sliderBGG2 = document.getElementById("BGG2");
-      var sliderBGB2 = document.getElementById("BGB2");
-      var output2 = document.getElementById("colorBG2");
-      
-      var sliderBGR3 = document.getElementById("BGR3");
-      var sliderBGG3 = document.getElementById("BGG3");
-      var sliderBGB3 = document.getElementById("BGB3");
-      var output3 = document.getElementById("colorBG3");
-      
-      var wavetextbox = document.getElementById("waveTextBox")
-      var waveSpeedtextbox = document.getElementById("waveSpeedTextBox")
-      var waveQualitytextbox = document.getElementById("waveQualityTextBox")
-      var smoothChecker = document.getElementById("SmoothBGCheck");
-      var smoothTextChecker = document.getElementById("smoothTextChecker");
-      
-      //local storage get colors
-      
-      var R1 = localStorage.getItem("R1");
-      var G1 = localStorage.getItem("G1");
-      var B1 = localStorage.getItem("B1");
-      
-      var R2 = localStorage.getItem("R2");
-      var G2 = localStorage.getItem("G2");
-      var B2 = localStorage.getItem("B2");
-      
-      var R3 = localStorage.getItem("R3");
-      var G3 = localStorage.getItem("G3");
-      var B3 = localStorage.getItem("B3");
-      
-      var WaveSize = localStorage.getItem("WaveSize")
-      var WaveSpeed = localStorage.getItem("WaveSpeed")
-      var WaveQuality = localStorage.getItem("WaveQuality")
-      
-      wavetextbox.placeholder = WaveSize
-      waveSpeedtextbox.placeholder = WaveSpeed
-      waveQualitytextbox.placeholder = WaveQuality
-      // set BG colors
-      
-      output1.style.backgroundColor = "rgba("+R1+","+G1+","+B1+",1)";
-      output2.style.backgroundColor = "rgba("+R2+","+G2+","+B2+",1)";
-      output3.style.backgroundColor = "rgba("+R3+","+G3+","+B3+",1)";
-      
-      // set slider values
-      
-      sliderBGR1.value = R1;
-      sliderBGG1.value = G1;
-      sliderBGB1.value = B1;
-      
-      sliderBGR2.value = R2;
-      sliderBGG2.value = G2;
-      sliderBGB2.value = B2;
-      
-      sliderBGR3.value = R3;
-      sliderBGG3.value = G3;
-      sliderBGB3.value = B3;
-      
-      // first RGB
-      
-      function SizeChange() {
-        var txt = wavetextbox.value
-        
-        wavetextbox.placeholder = txt
-        localStorage.setItem("WaveSize", txt)
-      }
-      
-      function SpeedChange() {
-        var txt = waveSpeedtextbox.value
-        
-        waveSpeedtextbox.placeholder = txt
-        localStorage.setItem("WaveSpeed", txt)
-      }
-      
-      function QualityChange() {
-        var txt = waveQualitytextbox.value
-        
-        waveQualitytextbox.placeholder = txt
-        localStorage.setItem("WaveQuality", txt)
-      }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CG!</title>
+    <link rel="icon" type="image/x-icon" href="Images/cglogo.png">
+</head>
+<body>
+ <canvas id="mycanvas"></canvas>
+ <div>
+    <div class="sidebar">
+        <button id="gamesButtonID" class="homebutton"></button>
+        <button id="proxyButtonID" class="proxybutton"></button>
+        <button id="settingsButtonID" class="settingsbutton"></button>
+        <button id="infoButtonID" class="infobutton"></button>
+    </div> 
+    <div class="bordersidebar"></div> 
+    <div class="bordersidebar2"></div> 
+    <h1>Cool games!</h1>
+    <h2>Mas videojuegos profesionales?!?!</h2>
 
-      function togleSmooth() {
-        // if the checkbox is checked, display the output text
-        if (smoothChecker.checked == true){
-          smoothTextChecker.textContent = "ON";
-          smoothTextChecker.classList.toggle('active');
-          localStorage.setItem("SmoothBG", "true")
-        } else {
-          smoothTextChecker.classList.toggle('active');
-          localStorage.setItem("SmoothBG", "false")
-          smoothTextChecker.textContent = "OFF";
-        }
-      };
+    <!-- Search bar for games -->
 
-      let bool = localStorage.getItem("SmoothBG")
-      if (bool === "true") {
-        smoothChecker.checked = true
-        smoothTextChecker.textContent = "ON";
-        smoothTextChecker.classList.toggle('active');
-      } else {
-         smoothChecker.checked = false
-        smoothTextChecker.textContent = "OFF";
-      };
-      
-      sliderBGR1.oninput = function() {
-        R1 = this.value;
-        localStorage.setItem('R1', this.value);
-        output1.style.backgroundColor = "rgba("+R1+","+G1+","+B1+",1)";
-         // window.location.reload();
-      };
-      
-      sliderBGG1.oninput = function() {
-        G1 = this.value;
-        localStorage.setItem('G1', this.value);
-        output1.style.backgroundColor = "rgba("+R1+","+G1+","+B1+",1)";
-          // window.location.reload();
-      };
-      
-      sliderBGB1.oninput = function() {
-        B1 = this.value;
-        localStorage.setItem('B1', this.value);
-        output1.style.backgroundColor = "rgba("+R1+","+G1+","+B1+",1)";
-           //window.location.reload();
-      };
-      
-      // Second RGB
-      
-      sliderBGR2.oninput = function() {
-        R2 = this.value;
-        localStorage.setItem('R2', this.value);
-        output2.style.backgroundColor = "rgba("+R2+","+G2+","+B2+",1)";
-          // window.location.reload();
-      };
-      
-      sliderBGG2.oninput = function() {
-        G2 = this.value;
-        localStorage.setItem('G2', this.value);
-        output2.style.backgroundColor = "rgba("+R2+","+G2+","+B2+",1)";
-          // window.location.reload();
-      };
-      
-      sliderBGB2.oninput = function() {
-        B2 = this.value;
-        localStorage.setItem('B2', this.value);
-        output2.style.backgroundColor = "rgba("+R2+","+G2+","+B2+",1)";
-         //  window.location.reload();
-      };
-      
-      // Third RGB 
-      
-      sliderBGR3.oninput = function() {
-        R3 = this.value;
-        localStorage.setItem('R3', this.value);
-        output3.style.backgroundColor = "rgba("+R3+","+G3+","+B3+",1)";
-         //  window.location.reload();
-      };
-      
-      sliderBGG3.oninput = function() {
-        G3 = this.value;
-        localStorage.setItem('G3', this.value);
-        output3.style.backgroundColor = "rgba("+R3+","+G3+","+B3+",1)";
-          // window.location.reload();
-      };
-      
-      sliderBGB3.oninput = function() {
-        B3 = this.value;
-        localStorage.setItem('B3', this.value);
-        output3.style.backgroundColor = "rgba("+R3+","+G3+","+B3+",1)";
-          // window.location.reload();
-      };
-      
-      document.getElementById("gamesButtonID").onclick = function () {
-          location.href = "index-test.html";
-      };
-      document.getElementById("proxyButtonID").onclick = function () {
-          location.href = "web.html";
-      };
-      document.getElementById("settingsButtonID").onclick = function () {
-          location.href = "settings.html";
-      };
-      document.getElementById("infoButtonID").onclick = function () {
-          location.href = "info.html";
-      };
-    </script>
-</body></html>
+    <div class="top-buttons">
+        <div class="search-bar-container">
+            <input type="text" id="search" class="search-bar" placeholder="Search for a game..." onkeyup="filterGames()">
+            <div class = "dropdown">
+                <button onclick="myFunction()" id="sortButton" class="dropbtn">All games</button>
+                <div id="myDropdown" class="dropdown-content">
+                    <button class="dropchildbtn" onclick="filterByCategory('3D games')">3D</button>
+                    <button class="dropchildbtn" onclick="filterByCategory('2D games')">2D</button>
+                    <button class="dropchildbtn" onclick="filterByCategory('Puzzle games')">Puzzle</button>
+                    <button class="dropchildbtn" onclick="filterByCategory('Gambling games')">Gambling</button>
+                    <button class="dropchildbtn" onclick="filterByCategory('2-player games')">2-player</button>
+                    <button class="dropchildbtn" onclick="filterByCategory('Retro games')">Retro</button>
+                    <button class="dropchildbtn" onclick="filterByCategory('all')">Show All</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scrollable game buttons -->
+    <div class="scroll-box" id="gameList">
+        <div class="top-buttons" data-category="3D games">
+            <a href="mcmain.html" class="pro-button">Play Minecraft.</a>
+        </div>
+        <div class="top-buttons" data-category="3D games">
+            <a href="games/Slope-Game-main/start.html" class="pro-button">Play Slope.</a>
+        </div>
+        <div class="top-buttons" data-category="Puzzle games">
+            <a href="games/2048-master/start.html" class="pro-button">Play 2048.</a>
+        </div>
+        <div class="top-buttons" data-category="3D games">
+            <a href="games/polytrack-main/index.html" class="pro-button">Play Poly Track.</a>
+        </div>
+        <div class="top-buttons" data-category="Puzzle games">
+            <a href="games\tetralegends-master\tetralegends-master\index.html" class="pro-button">Play Tetra Legends.</a>
+        </div>
+        <div class="top-buttons" data-category="2D games">
+            <a href="games/n-gon-master/n-gon-master/index.html" class="pro-button">Play N-Gon.</a>
+        </div>
+        <div class="top-buttons" data-category="2D games">
+            <a href="games/flappy-gh-pages/flappy-gh-pages/index.html" class="pro-button">Play Flappy Bird.</a>
+        </div>
+        <div class="top-buttons" data-category="2D games">
+            <a href="games/cookieclicker-gh-pages/cookieclicker-gh-pages/index.html" class="pro-button">Play Cookie Clicker.</a>
+        </div>
+        <div class="top-buttons" data-category="Puzzle games">
+            <a href="games/minesweeper-master/minesweeper-master/index.html" class="pro-button">Play Mine Sweeper.</a>
+        </div>
+        <div class="top-buttons" data-category="Gambling games">
+            <a href="games/blackjack/index.html" class="pro-button">Play Black Jack.</a>
+        </div>
+        <div class="top-buttons" data-category="2-player games">
+            <a href="games/rooftop-snipers/index.html" class="pro-button">Play Rooftop Snipers.</a>
+        </div>
+        <div class="top-buttons" data-category="Puzzle games">
+            <a href="games/CutTheRope-master/index.html" class="pro-button">Play Cut The Rope.</a>
+        </div>
+        <div class="top-buttons" data-category="2D games">
+            <a href="games/MindustryClassicMirror-main/MindustryClassicMirror-main/web/game.html" class="pro-button">Play Minedustry.</a>
+        </div>
+        <div class="top-buttons" data-category="2D games">
+            <a href="games/learntofly/index.html" class="pro-button">Play Learn To Fly.</a>
+        </div>
+        <div class="top-buttons" data-category="2D games">
+            <a href="games/learntofly2/index.html" class="pro-button">Play Learn To Fly 2.</a>
+        </div>
+        <div class="top-buttons" data-category="2D games">
+            <a href="games/stickman/index.html" class="pro-button">Play Stickman Hook.</a>
+        </div>
+        <div class="top-buttons" data-category="3D games">
+            <a href="games/subwaysurf/index.html" class="pro-button">Play Subway Surfers.</a>
+        </div>
+        <div class="top-buttons" data-category="2D games">
+            <a href="games/retrobowl/index.html" class="pro-button">Play Retro Bowl.</a>
+        </div>
+        <div class="top-buttons" data-category="2D games">
+            <a href="games/MotoX3M-master/MotoX3M-master/index.html" class="pro-button">Play Moto X3M.</a>
+        </div>
+        <div class="top-buttons" data-category="2D games">
+            <a href="games/moto-x3m-2-main/moto-x3m-2-main/index.html" class="pro-button">Play Moto X3M 2.</a>
+        </div>
+        <div class="top-buttons" data-category="2D games">
+            <a href="games/Moto-X3M-Winter-main/Moto-X3M-Winter-main/index.html" class="pro-button">Play Moto X3M Winter.</a>
+        </div>
+        <div class="top-buttons" data-category="2D games">
+            <a href="games/ovo/index.html" class="pro-button">Play OvO.</a>
+        </div>
+        <div class="top-buttons" data-category="2D games">
+            <a href="games/pacman-lite-master/index.html" class="pro-button">Play Pacman.</a>
+        </div>
+        <div class="top-buttons" data-category="2-player games">
+            <a href="games/basketrandom/index.html" class="pro-button">Play Basket Randoms.</a>
+        </div>
+        <div class="top-buttons" data-category="2-player games">
+            <a href="games/Boxing-Random-gh-pages/index.html" class="pro-button">Play Boxing Randoms.</a>
+        </div>
+        <div class="top-buttons" data-category="2-player games">
+            <a href="games/volleyrandom/index.html" class="pro-button">Play Volley Randoms.</a>
+        </div>
+        <div class="top-buttons" data-category="2-player games">
+            <a href="games/soccerrandom/index.html" class="pro-button">Play Soccer Randoms.</a>
+        </div>
+        <div class="top-buttons" data-category="2D games">
+            <a href="games/burrito/index.html" class="pro-button">Play Burrito Bison.</a>
+        </div>
+        <div class="top-buttons" data-category="2D games">
+            <a href="games/clash-tanks/index.html" class="pro-button">Play Clash Of Tanks.</a>
+        </div>
+        <div class="top-buttons" data-category="2D games">
+            <a href="games/crossy/index.html" class="pro-button">Play Crossy Road.</a>
+        </div>
+        <!--<div class="top-buttons" data-category="2D games">
+            <a href="games/deepest-sword/index.html" class="pro-button">Play Deepest Sword.</a>
+        </div>-->
+        <div class="top-buttons" data-category="2D games">
+            <a href="games/doodle-jump/index.html" class="pro-button">Play Doodle Jump.</a>
+        </div>
+        <div class="top-buttons" data-category="2-player games">
+            <a href="games/fireboy-and-watergirl-1/index.html" class="pro-button">Play Fireboy & Watergirl 1.</a>
+        </div>
+        <div class="top-buttons" data-category="2-player games">
+            <a href="games/fireboy-and-watergirl-2/index.html" class="pro-button">Play Fireboy & Watergirl 2.</a>
+        </div>
+        <div class="top-buttons" data-category="2-player games">
+            <a href="games/fireboy-and-watergirl-3/index.html" class="pro-button">Play Fireboy & Watergirl 3.</a>
+        </div>
+        <div class="top-buttons" data-category="2-player games">
+            <a href="games/fireboy-and-watergirl-4/index.html" class="pro-button">Play Fireboy & Watergirl 4.</a>
+        </div>
+        <div class="top-buttons" data-category="2-player games">
+            <a href="games/fireboy-and-watergirl-5/index.html" class="pro-button">Play Fireboy & Watergirl 5.</a>
+        </div>
+        <div class="top-buttons" data-category="2-player games">
+            <a href="games/fireboy-and-watergirl-6/index.html" class="pro-button">Play Fireboy & Watergirl 6.</a>
+        </div>
+        <div class="top-buttons" data-category="2D games">
+            <a href="games/jetpack-joyride/index.html" class="pro-button">Play Jeckpack Joyride.</a>
+        </div>
+        <div class="top-buttons" data-category="Retro games">
+            <a href="games/mario64/sm64/index.html" class="pro-button">Play Super Mario 64.</a>
+        </div>
+        <div class="top-buttons" data-category="3D games">
+            <a href="games/snow-rider/index.html" class="pro-button">Play Snow Rider 3D.</a>
+        </div>
+        <div class="top-buttons" data-category="2D games">
+            <a href="games/evil-glitch/index.html" class="pro-button">Play Evil Glitch.</a>
+        </div>
+        <div class="top-buttons" data-category="2D games">
+            <a href="games/awesometanks2/index.html" class="pro-button">Play Awesome Tanks 2.</a>
+        </div>
+        <div class="top-buttons" data-category="2D games">
+            <a href="games/awesometanksfiles/index.html" class="pro-button">Play Awesome Tanks.</a>
+        </div>
+        <div class="top-buttons" data-category="2D games">
+            <a href="games/MonkeyMart-gh-pages/MonkeyMart-gh-pages/index.html" class="pro-button">Play Monkey Mart.</a>
+        </div>
+        <div class="top-buttons" data-category="Puzzle games">
+            <a href="games/BlockBlast-main/index.html" class="pro-button">Play Block Blast.</a>
+        </div>
+        <div class="top-buttons" data-category="Puzzle games">
+            <a href="games/Maze3D-master/Maze3D-master/index.html" class="pro-button">Play Maze Master.</a>
+        </div>
+        <div class="top-buttons" data-category="3D games">
+            <a href="games/mari0_3d_web-main/index.html" class="pro-button">Play Mari0 - 3d.</a>
+        </div>
+        <div class="top-buttons" data-category="2D games">
+            <a href="games/testmari0/mari0/index.html" class="pro-button">Play Mari0 - 2d.</a>
+        </div>
+        <!--<div class="top-buttons" data-category="2-player games">*/-->
+            <!--<a href="games/Gangster-Game-main/index.html" class="pro-button">Play Gangsters.</a>-->
+        <!--</div>-->
+         <div class="top-buttons" data-category="Puzzle games">
+            <a href="games/SANDTRIS-main/index.html" class="pro-button">Play Sandtris.</a>
+        </div>
+         <div class="top-buttons" data-category="Puzzle games">
+            <a href="games/stack/index.html" class="pro-button">Play Stack.</a>
+        </div>
+        <div class="top-buttons" data-category="Retro games">
+            <a href="games/street-fighter/index.html" class="pro-button">Play Street Fighter 3.</a>
+        </div>
+        <div class="top-buttons" data-category="Retro games">
+            <a href="games/MortalKombat/index.html" class="pro-button">Play Mortal Kombat 3 Ultimate.</a>
+        </div>
+        <div class="top-buttons" data-category="Retro games">
+            <a href="games/Doom/Doom1/index.html" class="pro-button">Play Doom 64.</a>
+        </div>
+        <div class="top-buttons" data-category="Retro games">
+            <a href="games/SuperMarioWorld/index.html" class="pro-button">Play Super Mario World.</a>
+        </div>
+        <div class="top-buttons" data-category="3D games">
+            <a href="games/cattle3d-main/cattle3d-main/index.html" class="pro-button">Play Crazy Cattle 3D.</a>
+        </div>
+        <div class="top-buttons" data-category="Retro games">
+            <a href="games/MarioKart64/index.html" class="pro-button">Play Mario Kart 64.</a>
+        </div>
+        <div class="top-buttons" data-category="Puzzle games">
+            <a href="games/fruitmerge/index.html" class="pro-button">Play Fruit Merge.</a>
+        </div>
+        <div class="top-buttons" data-category="2-player games">
+            <a href="games/gimme-the-airpod/index.html" class="pro-button">Play Gimme The Airpod.</a>
+        </div>
+        <!--<div class="top-buttons" data-category="2-player games">
+            <a href="games/GetawayShootout.github.io-main/index.html" class="pro-button">Play Getaway Shootout.</a>
+        </div>
+        <div class="top-buttons" data-category="2D games">
+            <a href="games/sandspiel-master/index.html" class="pro-button">Play Sand Spiel.</a>
+        </div>-->
+        <!--<div class="top-buttons" data-category="2D games">
+            <a href="games/HappyWheelsUnblocked.github.io-main/HappyWheelsUnblocked.github.io-main/index.html" class="pro-button">Play Happy Wheels.</a>
+        </div>-->
+        <div class="top-buttons" data-category="3D games">
+            <a href="games/drive-mad-main/drive-mad-main/index.html" class="pro-button">Play Drive Mad.</a>
+        </div>
+        <div class="top-buttons" data-category="2D games">
+            <a href="games/RaftWars-main/index.html" class="pro-button">Play Raft Wars.</a>
+        </div>
+        <div class="top-buttons" data-category="2D games">
+            <a href="games/RaftWars2-gh-pages/index.html" class="pro-button">Play Raft Wars 2.</a>
+        </div>
+    </div>
+ </div>
+  <!-- <script src="js/squaremake.js"></script> -->
+     <script src ="js/startup.js"></script>
+  <script src="js/perlinpro.js"></script> 
+  <script src="js/mainindex.js"></script>
+  <script>
+     document.getElementById("gamesButtonID").onclick = function () {
+        location.href = "index.html";
+    };
+    document.getElementById("proxyButtonID").onclick = function () {
+        location.href = "web.html";
+    };
+    document.getElementById("settingsButtonID").onclick = function () {
+        location.href = "settings.html";
+    };
+    document.getElementById("infoButtonID").onclick = function () {
+        location.href = "info.html";
+    };
+  </script>
+</body>
+</html>
